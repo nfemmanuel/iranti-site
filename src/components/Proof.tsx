@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { Gauge, ConflictBar } from "./BenchmarkGauge";
 
 const externalBenchmarks = [
   {
     id: "B1",
+    href: "/proof/b1",
     name: "Entity Fact Retrieval",
     description: "Write fictional entity facts to Iranti, retrieve in a new session with zero in-context knowledge. Baseline arm uses the same LLM reading from context.",
     result: "16/16",
@@ -12,6 +14,7 @@ const externalBenchmarks = [
   },
   {
     id: "B2",
+    href: "/proof/b2",
     name: "Cross-Session Persistence",
     description: "5 researcher entities × 4 facts written in Session 1. Retrieve all 20 in Session 2 with no conversation history. Baseline (no memory): 0% recall, definitional.",
     result: "20/20",
@@ -21,6 +24,7 @@ const externalBenchmarks = [
   },
   {
     id: "B3",
+    href: "/proof/b3",
     name: "Conflict Resolution",
     description: "5 adversarial conflict scenarios with varying confidence gaps. Tests deterministic resolution (gap ≥10), LLM arbitration (gap <10), and source-reliability weighting.",
     result: "4/5",
@@ -224,7 +228,7 @@ export default function Proof() {
             {externalBenchmarks.map((b) => (
               <div
                 key={b.id}
-                className={`p-5 rounded-xl border ${
+                className={`p-5 rounded-xl border flex flex-col ${
                   b.status === "PASS"
                     ? "bg-[var(--bg-surface)] border-[var(--border-subtle)]"
                     : "bg-[var(--bg-surface)] border-amber-500/20"
@@ -245,13 +249,19 @@ export default function Proof() {
                 <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-3">
                   {b.description}
                 </p>
-                <div className={`text-xs leading-relaxed p-3 rounded-lg ${
+                <div className={`text-xs leading-relaxed p-3 rounded-lg mb-4 ${
                   b.status === "PASS"
                     ? "bg-[var(--bg-code)] text-[var(--text-faint)]"
                     : "bg-amber-500/5 text-[var(--text-muted)] border border-amber-500/10"
                 }`}>
                   {b.note}
                 </div>
+                <Link
+                  href={b.href}
+                  className="mt-auto text-xs font-mono text-teal-500 hover:text-teal-400 transition-colors"
+                >
+                  Full methodology + results →
+                </Link>
               </div>
             ))}
           </div>
