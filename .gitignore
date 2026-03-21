@@ -1,0 +1,33 @@
+# Iranti / secrets
+.env.iranti
+.env.iranti.local
+.env*.local
+
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Production build
+build/
+dist/
+
+# Claude Code session data
+.claude/
+
+# MCP config (may contain local API keys)
+.mcp.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+
+  /* Iranti palette */
+  --color-ink-950: #080808;
+  --color-ink-900: #111110;
+  --color-ink-800: #1c1c1a;
+  --color-ink-700: #2a2a28;
+  --color-ink-600: #3d3d3a;
+  --color-ink-500: #5c5c58;
+  --color-ink-400: #8a8a85;
+  --color-ink-300: #b8b8b2;
+  --color-ink-200: #d8d8d2;
+  --color-ink-100: #ebebе8;
+  --color-ink-50: #f5f5f2;
+
+  --color-sand-950: #1a1610;
+  --color-sand-900: #2d2619;
+  --color-sand-800: #453a27;
+  --color-sand-700: #5e5038;
+  --color-sand-100: #f0ead8;
+  --color-sand-50: #f8f4ec;
+
+  --color-amber-600: #d97706;
+  --color-amber-500: #f59e0b;
+  --color-amber-400: #fbbf24;
+  --color-amber-300: #fcd34d;
+  --color-amber-100: #fef3c7;
+
+  --color-teal-700: #0f766e;
+  --color-teal-600: #0d9488;
+  --color-teal-500: #14b8a6;
+  --color-teal-400: #2dd4bf;
+  --color-teal-300: #5eead4;
+  --color-teal-100: #ccfbf1;
+}
+
+/* ─── Semantic theme tokens ──────────────────────────────────────────────── */
+
+/* Dark mode (default) */
+:root,
+[data-theme="dark"] {
+  --bg-base:        #080808;
+  --bg-surface:     #111110;
+  --bg-code:        #0d0d0b;
+  --border-subtle:  #1c1c1a;
+  --border-light:   #2a2a28;
+  --text-primary:   #f5f5f2;
+  --text-secondary: #8a8a85;
+  --text-muted:     #5c5c58;
+  --text-faint:     #3d3d3a;
+  --text-code:      #d8d8d2;
+  --border-medium:  #3d3d3a;
+  --on-amber:       #080808;
+
+  color-scheme: dark;
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --bg-base:        #f8f6f1;
+  --bg-surface:     #f0ede6;
+  --bg-code:        #e8e4dc;
+  --border-subtle:  #e2ddd6;
+  --border-light:   #d4cfc8;
+  --text-primary:   #1a1a18;
+  --text-secondary: #4a4a46;
+  --text-muted:     #7a7a76;
+  --text-faint:     #9a9a96;
+  --text-code:      #2a2a26;
+  --border-medium:  #b8b3aa;
+  --on-amber:       #1c1a17;
+
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Code blocks */
+pre, code {
+  font-family: var(--font-mono);
+}
+
+/* Selection */
+::selection {
+  background: color-mix(in srgb, var(--color-amber-500) 30%, transparent);
+  color: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
