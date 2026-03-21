@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
 
+type DbPath = "local" | "managed" | "docker" | null;
+
 function CodeBlock({
   lines,
   onCopy,
@@ -55,6 +57,8 @@ function CodeBlock({
 }
 
 export default function GetStartedContent() {
+  const [dbPath, setDbPath] = useState<DbPath>(null);
+
   return (
     <main className="pt-24 pb-16">
       {/* Hero */}
@@ -75,6 +79,13 @@ export default function GetStartedContent() {
           you through configuration. If something breaks, the diagnostics
           command tells you exactly what.
         </p>
+        <div className="mt-6 inline-flex items-center gap-3 px-4 py-2 border border-[var(--border-subtle)] rounded-lg bg-[var(--bg-surface)]">
+          <span className="text-xs font-mono text-[var(--text-faint)] uppercase tracking-wider">Minimum requirements</span>
+          <span className="w-px h-3 bg-[var(--border-light)]" />
+          <span className="text-xs font-mono text-[var(--text-secondary)]">Node.js ≥ 18</span>
+          <span className="text-xs text-[var(--text-faint)]">·</span>
+          <span className="text-xs font-mono text-[var(--text-secondary)]">PostgreSQL ≥ 14</span>
+        </div>
       </section>
 
       {/* Path selector */}
@@ -96,6 +107,125 @@ export default function GetStartedContent() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Database path selector */}
+      <section className="px-6 py-12 border-t border-[var(--border-subtle)]">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-6 h-px bg-[var(--text-faint)]" />
+            <span className="text-xs text-[var(--text-faint)] font-mono uppercase tracking-wider">
+              Before you install — choose your database setup
+            </span>
+          </div>
+          <p className="text-sm text-[var(--text-muted)] mb-6 max-w-xl">
+            Iranti needs a PostgreSQL connection string during setup. Pick your path and we will show the right context before the install steps.
+          </p>
+
+          <div className="grid sm:grid-cols-3 gap-4 mb-8">
+            {/* Card: Local */}
+            <button
+              onClick={() => setDbPath(dbPath === "local" ? null : "local")}
+              className={`text-left p-5 border rounded-xl transition-colors ${
+                dbPath === "local"
+                  ? "border-amber-500/60 bg-amber-500/5"
+                  : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-light)]"
+              }`}
+            >
+              <div className="text-xs font-mono text-[var(--text-faint)] uppercase tracking-wider mb-2">Option A</div>
+              <div className="text-sm font-medium text-[var(--text-code)] mb-1">Local PostgreSQL</div>
+              <div className="text-xs text-[var(--text-muted)] leading-relaxed">
+                Already have Postgres running locally
+              </div>
+            </button>
+
+            {/* Card: Managed */}
+            <button
+              onClick={() => setDbPath(dbPath === "managed" ? null : "managed")}
+              className={`text-left p-5 border rounded-xl transition-colors ${
+                dbPath === "managed"
+                  ? "border-amber-500/60 bg-amber-500/5"
+                  : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-light)]"
+              }`}
+            >
+              <div className="text-xs font-mono text-[var(--text-faint)] uppercase tracking-wider mb-2">Option B</div>
+              <div className="text-sm font-medium text-[var(--text-code)] mb-1">Managed database</div>
+              <div className="text-xs text-[var(--text-muted)] leading-relaxed">
+                Prefer Railway or Supabase — no local setup
+              </div>
+            </button>
+
+            {/* Card: Docker */}
+            <button
+              onClick={() => setDbPath(dbPath === "docker" ? null : "docker")}
+              className={`text-left p-5 border rounded-xl transition-colors ${
+                dbPath === "docker"
+                  ? "border-amber-500/60 bg-amber-500/5"
+                  : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-light)]"
+              }`}
+            >
+              <div className="text-xs font-mono text-[var(--text-faint)] uppercase tracking-wider mb-2">Option C</div>
+              <div className="text-sm font-medium text-[var(--text-code)] mb-1">Docker</div>
+              <div className="text-xs text-[var(--text-muted)] leading-relaxed">
+                Spin up a fresh isolated instance with one command
+              </div>
+            </button>
+          </div>
+
+          {/* Contextual detail per path */}
+          {dbPath === "local" && (
+            <div className="p-5 border border-[var(--border-subtle)] rounded-xl bg-[var(--bg-surface)] space-y-3">
+              <div className="text-sm font-medium text-[var(--text-code)]">Local PostgreSQL — connection string</div>
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                When <code className="font-mono text-[var(--text-secondary)]">iranti setup</code> asks for a connection string, use your local Postgres URL. The default for a local install with no auth is:
+              </p>
+              <CodeBlock lines={[{ cmd: "postgresql://localhost:5432/iranti", comment: "# replace with your DB name / credentials" }]} />
+              <p className="text-xs text-[var(--text-faint)] leading-relaxed">
+                Make sure your Postgres server is running and the database exists before running setup. Iranti will run its own migrations.
+              </p>
+            </div>
+          )}
+
+          {dbPath === "managed" && (
+            <div className="p-5 border border-[var(--border-subtle)] rounded-xl bg-[var(--bg-surface)] space-y-4">
+              <div className="text-sm font-medium text-[var(--text-code)]">Managed database — Railway or Supabase</div>
+              <div className="space-y-3">
+                <div>
+                  <div className="text-xs text-[var(--text-faint)] font-mono mb-2">Railway (recommended for solo devs)</div>
+                  <CodeBlock lines={[
+                    { cmd: "railway login" },
+                    { cmd: "railway new && railway add --database postgresql", comment: "# Railway generates the DATABASE_URL" },
+                  ]} />
+                </div>
+                <div>
+                  <div className="text-xs text-[var(--text-faint)] font-mono mb-2">Supabase</div>
+                  <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-2">
+                    Create a project at <span className="font-mono text-[var(--text-secondary)]">supabase.com</span>, then copy the connection string from Project Settings → Database.
+                  </p>
+                </div>
+              </div>
+              <p className="text-xs text-[var(--text-faint)] leading-relaxed">
+                Paste the provided connection string when <code className="font-mono text-[var(--text-secondary)]">iranti setup</code> prompts for it.
+              </p>
+            </div>
+          )}
+
+          {dbPath === "docker" && (
+            <div className="p-5 border border-[var(--border-subtle)] rounded-xl bg-[var(--bg-surface)] space-y-3">
+              <div className="text-sm font-medium text-[var(--text-code)]">Docker — spin up Postgres 16</div>
+              <CodeBlock lines={[{
+                cmd: "docker run --name iranti-pg -e POSTGRES_PASSWORD=iranti -p 5432:5432 -d postgres:16",
+              }]} />
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                Then when <code className="font-mono text-[var(--text-secondary)]">iranti setup</code> asks for a connection string:
+              </p>
+              <CodeBlock lines={[{ cmd: "postgresql://postgres:iranti@localhost:5432/postgres" }]} />
+              <p className="text-xs text-[var(--text-faint)] leading-relaxed">
+                The container stops when you restart your machine. Run <code className="font-mono text-[var(--text-secondary)]">docker start iranti-pg</code> to bring it back.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

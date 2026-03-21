@@ -108,11 +108,26 @@ export default function Footer() {
               <strong className="text-[var(--text-muted)]">iranti</strong> — memory infrastructure for multi-agent AI
             </span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
             <span>v0.2.12</span>
             <span>AGPL-3.0</span>
             <span>
-              <em>Iranti</em> is the Yoruba word for memory and remembrance.
+              Built by{" "}
+              <a
+                href="https://github.com/nfemmanuel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-muted)] hover:text-[var(--text-code)] transition-colors"
+              >
+                @nfemmanuel
+              </a>
+              {" · "}
+              <a
+                href="mailto:hello@iranti.dev"
+                className="text-[var(--text-muted)] hover:text-[var(--text-code)] transition-colors"
+              >
+                hello@iranti.dev
+              </a>
             </span>
           </div>
         </div>
