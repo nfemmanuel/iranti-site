@@ -2,34 +2,6 @@ export default function Footer() {
   return (
     <footer className="border-t border-[var(--border-subtle)] py-16 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* CTA row */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 mb-12 border-b border-[var(--border-subtle)]">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[var(--text-primary)] mb-2">
-              Ready to give your agents memory?
-            </h2>
-            <p className="text-[var(--text-muted)] text-sm">
-              Open source. Self-hostable. PostgreSQL-backed. No lock-in.
-            </p>
-          </div>
-          <div className="flex gap-3 flex-shrink-0">
-            <a
-              href="https://github.com/nfemmanuel/iranti"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors"
-            >
-              View on GitHub
-            </a>
-            <a
-              href="/get-started"
-              className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
-            >
-              Get started
-            </a>
-          </div>
-        </div>
-
         {/* Links grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {[
