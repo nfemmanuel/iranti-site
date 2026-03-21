@@ -78,16 +78,6 @@ These tokens are declared in `@theme` in `globals.css` and do not change between
 | `--on-amber` | `#080808` | `#1c1a17` | Text rendered on amber (`#f59e0b`) backgrounds. Always the warmest near-black available. Contrast: ~11:1 dark, ~12:1 light against amber-500. |
 | `--on-teal` | `#080808` | `#1c1a17` | Text rendered on teal (`#14b8a6`) backgrounds. Same principle. Contrast: ~5.5:1 dark, ~5.5:1 light against teal-500. |
 
-### Composite / Derived Tokens (Not Yet in globals.css — Recommended Additions)
-
-These tokens are referenced in the visual system spec but not yet explicitly declared in `globals.css`. They can be derived from existing palette values. The frontend developer should add them to `globals.css` as semantic tokens rather than computing them inline.
-
-| Token | Dark Value | Light Value | Usage |
-|---|---|---|---|
-| `--border-medium` | `#3d3d3a` | `#b8b3aa` | Hover border state. Currently used as a hardcoded hex in components. Should be tokenized. |
-| `--on-amber` | `#080808` | `#1c1a17` | Already used in buttons as hardcoded hex. Should be tokenized. |
-| `--on-teal` | `#080808` | `#1c1a17` | Same situation. |
-
 ---
 
 ## Complete Token Block (Ready to Paste Into globals.css)

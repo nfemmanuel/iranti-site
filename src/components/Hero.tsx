@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 function useCountUp(target: number, duration = 900, delay = 0) {
   const [count, setCount] = useState(0);
@@ -30,6 +31,7 @@ export default function Hero() {
   const handleCopy = () => {
     navigator.clipboard.writeText("npm install -g iranti");
     setCopied(true);
+    trackEvent("install_copy");
     setTimeout(() => setCopied(false), 2000);
   };
 

@@ -4,28 +4,31 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Iranti — Memory Infrastructure for Multi-Agent AI",
   description:
-    "Iranti gives agents persistent, identity-based shared memory. Facts written by one agent are retrievable by any other through exact entity+key lookup. Conflict-aware, session-persistent, framework-agnostic.",
+    "Iranti is persistent memory infrastructure for multi-agent AI systems. Identity-based shared memory with conflict resolution. Framework-agnostic. Self-hostable. AGPL-3.0.",
   keywords: [
-    "AI memory",
+    "multi-agent AI memory",
+    "LLM memory infrastructure",
+    "persistent agent memory",
+    "AI memory infrastructure",
     "multi-agent systems",
-    "memory infrastructure",
     "agent memory",
-    "LLM memory",
-    "knowledge base",
+    "shared agent memory",
+    "MCP memory server",
+    "knowledge base for agents",
   ],
   openGraph: {
     title: "Iranti — Memory Infrastructure for Multi-Agent AI",
     description:
-      "Shared, persistent, conflict-aware memory for multi-agent AI systems. Not a framework. Infrastructure.",
+      "Persistent, identity-based shared memory for multi-agent AI systems. Conflict-aware. Framework-agnostic. Not an agent framework — infrastructure.",
     type: "website",
     url: "https://iranti.dev",
     siteName: "Iranti",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Iranti — Memory Infrastructure for Multi-Agent AI",
     description:
-      "Shared, persistent, conflict-aware memory for multi-agent AI systems. Not a framework. Infrastructure.",
+      "Persistent, identity-based shared memory for multi-agent AI systems. Conflict-aware. Framework-agnostic. Not an agent framework — infrastructure.",
   },
 };
 
@@ -61,6 +64,29 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
+        />
+        {/* SoftwareApplication structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Iranti",
+              applicationCategory: "DeveloperApplication",
+              description:
+                "Memory infrastructure for multi-agent AI systems. Persistent, identity-based shared memory with conflict resolution.",
+              url: "https://iranti.dev",
+              license: "https://www.gnu.org/licenses/agpl-3.0.en.html",
+              operatingSystem: "Any",
+            }),
+          }}
+        />
+        {/* Plausible analytics — cookie-free, GDPR-compliant, <1KB */}
+        <script
+          defer
+          data-domain="iranti.dev"
+          src="https://plausible.io/js/script.js"
         />
       </head>
       <body className="antialiased">{children}</body>

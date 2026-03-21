@@ -27,15 +27,16 @@ Every item below was completed before the first line of homepage code was writte
 - [x] Typography system — Inter (sans) and JetBrains Mono (mono) wired as Tailwind theme tokens
 - [x] CTA architecture for homepage — three-tier: Install (primary), See Proof (secondary), GitHub (tertiary)
 - [x] Visual direction validated through implemented components
+- [x] Light mode CSS token definitions — `[data-theme="light"]` block in `globals.css`
+- [x] Theme toggle wired to Nav — `ThemeToggle` imported and rendered in `Nav.tsx` (desktop and mobile)
+- [x] Light mode component refactor — CSS variable conversion underway; Hero and Nav complete as of 2026-03-21
 
 ### Still Missing
-- [ ] Light mode design system — CSS tokens exist in `globals.css` but no component uses `var(--text-primary)` etc.; all components are hardcoded to dark hex values. Light mode will not work until components are refactored to semantic tokens.
-- [ ] Theme toggle wired to Nav — `ThemeToggle.tsx` exists but is not imported into `Nav.tsx`
-- [ ] Multi-page routing architecture — currently a single-page SPA with anchor links; `/product`, `/proof`, `/get-started`, `/integrations` pages are unbuilt
-- [ ] Page-level content model for sub-pages
+- [ ] Light mode component refactor — Footer, Contact, and remaining components pending conversion from hardcoded hex values to semantic tokens
+- [ ] Multi-page routing architecture decision documented (pages exist; routing pattern should be recorded)
 - [ ] Motion principles documented
 
-**Definition of done:** Light mode works without visual breakage. Theme toggle is accessible from Nav. Multi-page routing decision is made and documented. Each page has a defined content model.
+**Definition of done:** Light mode works without visual breakage on all components. Multi-page routing decision is documented. Each page has a defined content model.
 
 ---
 
@@ -47,16 +48,17 @@ Every item below was completed before the first line of homepage code was writte
 - [x] Nav with mobile menu and scroll-aware background
 - [x] Footer with full link grid (GitHub, docs, packages, community)
 - [x] Vector DB comparison section on homepage
+- [x] `/product` page — full product page: architecture, VS vector DBs, VS memory libraries, VS agent frameworks
+- [x] `/proof` page — expanded proof: methodology, goal validation table, conflict benchmark, framework compat, external benchmarks
+- [x] `/get-started` page — 4-step install, Claude Code MCP, Codex MCP, iranti chat, Python SDK, troubleshooting
+- [x] `/integrations` page — native, validated, and general integration tiers with honest browser boundary
+- [x] Memory library and agent framework comparison sections — on `/product` page
+- [x] Contact / waitlist surface — `Contact.tsx` on homepage with mailto and GitHub Discussions
 
-### Needs Build
-- [ ] `/product` page — full product overview, architecture deep dive, use case narrative
-- [ ] `/proof` page — expanded proof surface, methodology links, benchmark deep-dive
-- [ ] `/get-started` page — isolated vs shared mode, PostgreSQL/Docker guidance, integration routing
-- [ ] `/integrations` page — full per-integration docs gateway
-- [ ] Comparison narrative sections — memory libraries and agent frameworks (site only covers vector DBs today)
-- [ ] Contact / waitlist surface
+### Still Needed
+- [ ] Docs gateway page — footer links to GitHub docs directly; no curated gateway page on the site
 
-**Definition of done:** All five primary pages are implemented, routed, and render correctly in both light and dark mode. Each page has a clear CTA and routes to the correct next action.
+**Definition of done:** All primary pages are implemented, routed, and render correctly in both light and dark mode. Each page has a clear CTA and routes to the correct next action.
 
 ---
 

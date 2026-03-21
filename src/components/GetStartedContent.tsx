@@ -2,14 +2,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
-function CodeBlock({ lines }: { lines: { cmd: string; comment?: string }[] }) {
+function CodeBlock({
+  lines,
+  onCopy,
+}: {
+  lines: { cmd: string; comment?: string }[];
+  onCopy?: () => void;
+}) {
   const [copied, setCopied] = useState(false);
 
   const text = lines.map((l) => l.cmd).join("\n");
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
     setCopied(true);
+    onCopy?.();
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -134,7 +142,10 @@ export default function GetStartedContent() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-medium text-[var(--text-code)] mb-2">{item.label}</div>
-                    <CodeBlock lines={item.lines} />
+                    <CodeBlock
+                      lines={item.lines}
+                      onCopy={() => trackEvent("step_copy", { step: item.label })}
+                    />
                   </div>
                 </div>
               ))}

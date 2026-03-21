@@ -4,9 +4,23 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Integrations — Iranti",
+  title: "Integrations — Iranti Works With Claude Code, Codex, LangChain, CrewAI",
   description:
-    "Iranti integrations: Claude Code (MCP + hooks), Codex (MCP), iranti chat (CLI), CrewAI, LangChain, OpenAI API, and any LLM via middleware. Honest boundary: browser-tab injection is not supported.",
+    "Iranti integrates with Claude Code (MCP + hooks), Codex (MCP), CrewAI, LangChain, and the OpenAI API. REST API and Python/npm SDKs for any LLM framework. Framework-agnostic persistent memory.",
+  openGraph: {
+    title: "Integrations — Iranti Works With Claude Code, Codex, LangChain, CrewAI",
+    description:
+      "Iranti integrates with Claude Code (MCP + hooks), Codex (MCP), CrewAI, LangChain, and the OpenAI API. REST API and Python/npm SDKs for any LLM framework.",
+    type: "website",
+    url: "https://iranti.dev/integrations",
+    siteName: "Iranti",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Integrations — Iranti Works With Claude Code, Codex, LangChain, CrewAI",
+    description:
+      "Iranti integrates with Claude Code (MCP + hooks), Codex (MCP), CrewAI, LangChain, and the OpenAI API. REST API and Python/npm SDKs for any LLM framework.",
+  },
 };
 
 const nativeIntegrations = [

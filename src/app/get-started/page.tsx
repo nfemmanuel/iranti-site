@@ -4,9 +4,23 @@ import Footer from "@/components/Footer";
 import GetStartedContent from "@/components/GetStartedContent";
 
 export const metadata: Metadata = {
-  title: "Get Started — Iranti",
+  title: "Install Iranti — Self-Hosted Agent Memory in 4 Commands",
   description:
-    "Install Iranti in four commands. Quick install, Claude Code MCP integration, Codex integration, and iranti chat. PostgreSQL-backed, self-hostable. iranti doctor --debug for troubleshooting.",
+    "Install Iranti in four commands. Self-hosted, PostgreSQL-backed persistent memory for AI agents. MCP integration for Claude Code and Codex. AGPL-3.0 open source.",
+  openGraph: {
+    title: "Install Iranti — Self-Hosted Agent Memory in 4 Commands",
+    description:
+      "Install Iranti in four commands. Self-hosted, PostgreSQL-backed persistent memory for AI agents. MCP integration for Claude Code and Codex.",
+    type: "website",
+    url: "https://iranti.dev/get-started",
+    siteName: "Iranti",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Install Iranti — Self-Hosted Agent Memory in 4 Commands",
+    description:
+      "Install Iranti in four commands. Self-hosted, PostgreSQL-backed persistent memory for AI agents. MCP integration for Claude Code and Codex.",
+  },
 };
 
 export default function GetStartedPage() {

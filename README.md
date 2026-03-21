@@ -1,51 +1,73 @@
-# Iranti Site
+# iranti-site
 
-Technical product site for Iranti.
+The public product site for [Iranti](https://github.com/nfemmanuel/iranti) — memory infrastructure for multi-agent AI.
 
-This repo exists to build the public-facing site for Iranti as a technical product, not a generic marketing page.
-The site should explain the product clearly, prove credibility, route visitors to install/docs/GitHub, and create a conversion surface for future hosted or commercial interest.
+This repo builds [iranti.dev](https://iranti.dev). It is a marketing and product site, not the Iranti product itself. The goal is to explain what Iranti is, prove its credibility with real benchmarks, and route visitors to install, docs, and GitHub.
 
-## Primary Jobs
-- explain what Iranti is
-- make the benchmark and architecture legible
-- convert visitors to GitHub, docs, install, and contact/waitlist
-- give evaluators confidence that Iranti is real infrastructure, not vague AI branding
+---
 
-## Start Iranti For This Repo
-Open a separate terminal and run:
+## Tech Stack
 
-```powershell
-iranti run --instance local
+- **Next.js 15** (App Router, static export)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **React 19**
+
+---
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
 ```
 
-Check it:
+The site runs at `http://localhost:3000`.
 
-```powershell
-iranti doctor --instance local
-iranti status
+---
+
+## Build
+
+```bash
+npm run build
 ```
 
-This repo is intended to bind to the local Iranti instance via `.env.iranti`.
+Outputs a static site to `.next/`. Run `npm start` to serve the production build locally.
 
-## Common Local Workflow
-From this repo:
+---
 
-```powershell
-iranti project init . --instance local --agent-id site_main --mode isolated
-iranti claude-setup .
+## Lint
+
+```bash
+npm run lint
 ```
 
-Then open Claude Code in this repo.
+---
 
-## Repo Map
-- `CLAUDE.md` - project operating context for Claude Code and agent collaboration
-- `.claude/agents/` - specialist agent instructions
-- `docs/prd/site-prd.md` - product requirements document
-- `docs/roadmap.md` - phased roadmap
-- `docs/backlog.md` - prioritized backlog
-- `docs/tickets/` - ticket breakdowns
+## Contributing
 
-## Notes
-- This site should be technical, credible, and visually distinctive.
-- It should not look like generic AI startup wallpaper.
-- It should stay tightly aligned with the real Iranti product and docs.
+PRs go against `master`. No special setup beyond `npm install`.
+
+If you are working with the Iranti shared memory layer, see [CONTRIBUTING.md](./CONTRIBUTING.md) for how agents, Iranti, and the development workflow fit together.
+
+---
+
+## Repo Layout
+
+```
+src/app/             Next.js pages and root layout
+src/components/      React components (one per section)
+docs/                Product docs, roadmap, backlog, tickets, templates
+docs/prd/            Product requirements document
+docs/tickets/        Individual epic and feature tickets
+.claude/agents/      Specialist agent instructions for Claude Code
+CLAUDE.md            Project operating context for AI agents
+```
+
+---
+
+## The Iranti Product
+
+The Iranti product itself lives at: **[github.com/nfemmanuel/iranti](https://github.com/nfemmanuel/iranti)**
+
+This repo is only the site. Do not file product issues here.

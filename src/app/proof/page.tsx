@@ -2,11 +2,26 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Proof — Iranti Benchmark Results",
+  title: "Benchmark Results — Iranti Multi-Agent Memory Validation",
   description:
-    "Iranti's validation experiments: 20/20 cross-session retrieval, 16/16 adversarial conflict benchmark, 4/4 consistency validation. Full methodology and honest scope documentation.",
+    "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 adversarial conflict resolution, 4/4 consistency. Reproducible methodology. Validated with CrewAI, LangChain, OpenAI API.",
+  openGraph: {
+    title: "Benchmark Results — Iranti Multi-Agent Memory Validation",
+    description:
+      "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 adversarial conflict resolution, 4/4 consistency. Validated with CrewAI, LangChain, OpenAI API.",
+    type: "website",
+    url: "https://iranti.dev/proof",
+    siteName: "Iranti",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Benchmark Results — Iranti Multi-Agent Memory Validation",
+    description:
+      "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 adversarial conflict resolution, 4/4 consistency. Validated with CrewAI, LangChain, OpenAI API.",
+  },
 };
 
 const validationResults = [
@@ -30,9 +45,33 @@ const frameworkResults = [
   { framework: "CrewAI", entity: "project/nexus_prime", score: "6/6", time: "60s", detail: "Researcher agent writes facts. Analyst agent reads them back. No shared state between crew roles." },
 ];
 
+const proofJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "Iranti Multi-Agent Memory Validation Results",
+  description:
+    "Internal validation benchmark for Iranti persistent memory infrastructure. 20/20 cross-session retrieval, 16/16 adversarial conflict resolution, 4/4 write consistency. Tested with CrewAI, LangChain, and raw OpenAI API.",
+  url: "https://iranti.dev/proof",
+  creator: {
+    "@type": "Organization",
+    name: "Iranti",
+    url: "https://iranti.dev",
+  },
+  variableMeasured: [
+    { "@type": "PropertyValue", name: "Cross-session retrieval", value: "20/20" },
+    { "@type": "PropertyValue", name: "Adversarial conflict resolution", value: "16/16" },
+    { "@type": "PropertyValue", name: "Write consistency", value: "4/4" },
+  ],
+};
+
 export default function ProofPage() {
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+      <Script
+        id="proof-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(proofJsonLd) }}
+      />
       <Nav />
 
       <main className="pt-24 pb-16">

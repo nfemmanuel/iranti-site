@@ -4,9 +4,23 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Docs — Iranti",
+  title: "Docs — Iranti Agent Memory Infrastructure",
   description:
-    "Iranti documentation: quickstart guide, Claude Code MCP integration, Codex integration, security quickstart, and concept reference. Full docs live on GitHub.",
+    "Iranti documentation: quickstart, Claude Code MCP setup, Codex integration, security guide, and concept reference for entity+key memory, conflict resolution, and agent isolation.",
+  openGraph: {
+    title: "Docs — Iranti Agent Memory Infrastructure",
+    description:
+      "Iranti documentation: quickstart, Claude Code MCP setup, Codex integration, security guide, and concept reference for entity+key memory, conflict resolution, and agent isolation.",
+    type: "website",
+    url: "https://iranti.dev/docs",
+    siteName: "Iranti",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Docs — Iranti Agent Memory Infrastructure",
+    description:
+      "Iranti documentation: quickstart, Claude Code MCP setup, Codex integration, security guide, and concept reference for entity+key memory, conflict resolution, and agent isolation.",
+  },
 };
 
 const guides = [
