@@ -286,6 +286,80 @@ export default function ProofPage() {
           </div>
         </section>
 
+        {/* Benchmark Deep Dives */}
+        <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-6 h-px bg-teal-500" />
+              <span className="text-xs text-teal-500 font-mono uppercase tracking-wider">
+                Benchmark Deep Dives
+              </span>
+            </div>
+            <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[var(--text-primary)] mb-3">
+              Full methodology and results for each benchmark.
+            </h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-8 max-w-2xl">
+              Each page below documents the complete experimental design, conditions tested,
+              raw outputs, and honest scope of what was and was not measured.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {[
+                {
+                  id: "B1",
+                  href: "/proof/b1",
+                  name: "Entity Fact Retrieval under Distractor Density",
+                  description:
+                    "Iranti exact lookup vs context-reading at N=5/20/100/500. Both arms at ceiling. Degradation regime at N≥1000 not yet tested.",
+                  score: "8/8 Iranti arm, 30/30 baseline",
+                },
+                {
+                  id: "B2",
+                  href: "/proof/b2",
+                  name: "Cross-Session Memory Persistence",
+                  description:
+                    "20/20 facts retrieved with no in-context knowledge. KB survives across sessions.",
+                  score: "20/20",
+                },
+                {
+                  id: "B3",
+                  href: "/proof/b3",
+                  name: "Conflict Resolution",
+                  description:
+                    "5 adversarial conditions, 4 resolved correctly (80%). LLM arbitration 3/3. C2 failure is a documented expected limitation.",
+                  score: "4/5",
+                },
+              ].map((bench) => (
+                <div
+                  key={bench.id}
+                  className="p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl flex flex-col"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="px-2 py-0.5 bg-teal-500/10 text-teal-400 text-xs font-mono rounded">
+                      {bench.id}
+                    </span>
+                    <span className="font-mono text-sm text-teal-400">{bench.score}</span>
+                  </div>
+                  <div className="text-sm font-semibold text-[var(--text-code)] mb-2 leading-snug">
+                    {bench.name}
+                  </div>
+                  <p className="text-xs text-[var(--text-muted)] leading-relaxed flex-1">
+                    {bench.description}
+                  </p>
+                  <div className="mt-4">
+                    <Link
+                      href={bench.href}
+                      className="text-xs text-teal-400 hover:text-teal-300 font-mono transition-colors"
+                    >
+                      Read full results →
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Source */}
         <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
           <div className="max-w-6xl mx-auto">
