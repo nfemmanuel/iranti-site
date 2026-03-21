@@ -233,7 +233,7 @@ export default function GetStartedContent() {
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-medium text-[var(--text-code)] mb-2">Run auto-setup in your project</div>
-                  <CodeBlock lines={[{ cmd: "iranti claude-setup .", comment: "# configures .mcp.json and hooks" }]} />
+                  <CodeBlock lines={[{ cmd: "iranti claude-setup", comment: "# configures .mcp.json and hooks automatically" }]} />
                 </div>
               </div>
               <div className="flex gap-4">

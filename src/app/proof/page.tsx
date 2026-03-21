@@ -7,11 +7,11 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Benchmark Results — Iranti Multi-Agent Memory Validation",
   description:
-    "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 adversarial conflict resolution, 4/4 consistency. Reproducible methodology. Validated with CrewAI, LangChain, OpenAI API.",
+    "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 internal adversarial conflict suite (4 suites × 4 tests), 4/4 consistency. Reproducible methodology. Validated with CrewAI, LangChain, OpenAI API.",
   openGraph: {
     title: "Benchmark Results — Iranti Multi-Agent Memory Validation",
     description:
-      "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 adversarial conflict resolution, 4/4 consistency. Validated with CrewAI, LangChain, OpenAI API.",
+      "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 internal adversarial conflict suite (4 suites × 4 tests), 4/4 consistency. Validated with CrewAI, LangChain, OpenAI API.",
     type: "website",
     url: "https://iranti.dev/proof",
     siteName: "Iranti",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Benchmark Results — Iranti Multi-Agent Memory Validation",
     description:
-      "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 adversarial conflict resolution, 4/4 consistency. Validated with CrewAI, LangChain, OpenAI API.",
+      "Iranti benchmark results: 20/20 cross-session persistent memory retrieval, 16/16 internal adversarial conflict suite (4 suites × 4 tests), 4/4 consistency. Validated with CrewAI, LangChain, OpenAI API.",
   },
 };
 

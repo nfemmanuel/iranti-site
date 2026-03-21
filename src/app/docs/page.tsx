@@ -85,7 +85,7 @@ const concepts = [
   },
   {
     title: "The Staff architecture",
-    desc: "Iranti is composed of five internal components: Librarian (ingestion + conflict detection), Attendant (retrieval + briefing), Archivist (long-term storage), Mediator (conflict resolution), Attendant (session hooks).",
+    desc: "Iranti is composed of five internal components: Librarian (ingestion + conflict detection), Attendant (retrieval + briefing), Archivist (long-term storage), Resolutionist (conflict resolution), Doorman (session hooks).",
     tag: "Concept",
     tagColor: "text-teal-500 bg-teal-500/10 border-teal-500/20",
   },
