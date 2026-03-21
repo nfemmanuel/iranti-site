@@ -63,7 +63,7 @@ export default function Nav() {
             <Link
               key={l.label}
               href={l.href}
-              className="px-3 py-1.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+              className="px-3 py-1.5 text-sm text-[var(--text-code)] hover:text-[var(--text-primary)] transition-colors"
             >
               {l.label}
             </Link>
@@ -129,7 +129,7 @@ export default function Nav() {
             <Link
               key={l.label}
               href={l.href}
-              className="block py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+              className="block py-2 text-sm text-[var(--text-code)] hover:text-[var(--text-primary)] transition-colors"
               onClick={() => setOpen(false)}
             >
               {l.label}

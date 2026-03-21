@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ProductStaffCards from "@/components/ProductStaffCards";
+import ProductCapabilityCards from "@/components/ProductCapabilityCards";
 
 export const metadata: Metadata = {
   title: "Product — Iranti Memory Infrastructure",
@@ -9,53 +11,6 @@ export const metadata: Metadata = {
     "How Iranti works: The Staff architecture, identity-first retrieval, conflict resolution, and why Iranti is different from memory libraries, agent frameworks, and vector databases.",
 };
 
-const staff = [
-  {
-    name: "Library",
-    role: "Knowledge base",
-    desc: "PostgreSQL tables. Current truth lives in knowledge_base. Closed and contested intervals live in archive. Facts are attached to entities by key.",
-    color: "amber",
-  },
-  {
-    name: "Librarian",
-    role: "Write manager",
-    desc: "All agent writes go through here. Detects conflicts, resolves them deterministically when possible, escalates to humans when genuinely ambiguous.",
-    color: "teal",
-  },
-  {
-    name: "Attendant",
-    role: "Per-agent memory",
-    desc: "One instance per agent. Manages working memory — what to load at session start, what to inject per turn, what to persist between sessions.",
-    color: "teal",
-  },
-  {
-    name: "Archivist",
-    role: "Decay + cleanup",
-    desc: "Archives expired and low-confidence entries on a schedule. Supports Ebbinghaus-style decay — facts lose confidence without reinforcement. Never deletes; worst case is a messy archive.",
-    color: "amber",
-  },
-  {
-    name: "Resolutionist",
-    role: "Conflict review",
-    desc: "Interactive CLI for human conflict review. Reads pending escalation files, guides a reviewer through competing facts, writes authoritative resolutions.",
-    color: "amber",
-  },
-];
-
-const colorMap = {
-  amber: {
-    border: "border-amber-500/20",
-    bg: "bg-amber-500/5",
-    dot: "bg-amber-500",
-    label: "text-amber-500",
-  },
-  teal: {
-    border: "border-teal-500/20",
-    bg: "bg-teal-500/5",
-    dot: "bg-teal-500",
-    label: "text-teal-500",
-  },
-};
 
 const vsMemoryLibraries = [
   {
@@ -196,29 +151,8 @@ export default function ProductPage() {
                 </div>
               </div>
 
-              {/* Staff cards */}
-              <div className="space-y-3">
-                {staff.map((s) => {
-                  const c = colorMap[s.color as keyof typeof colorMap];
-                  return (
-                    <div
-                      key={s.name}
-                      className={`p-4 rounded-xl border ${c.border} ${c.bg}`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className={`w-2 h-2 rounded-full ${c.dot} mt-1.5 flex-shrink-0`} />
-                        <div>
-                          <div className="flex items-baseline gap-2 mb-1">
-                            <span className={`text-sm font-semibold ${c.label}`}>{s.name}</span>
-                            <span className="text-xs text-[var(--text-faint)] font-mono">{s.role}</span>
-                          </div>
-                          <p className="text-sm text-[var(--text-muted)] leading-relaxed">{s.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+              {/* Staff cards — animated */}
+              <ProductStaffCards />
             </div>
           </div>
         </section>
@@ -366,41 +300,8 @@ export default function ProductPage() {
             <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[var(--text-primary)] mb-10 leading-tight">
               Beyond write and read.
             </h2>
-            <div className="grid md:grid-cols-3 gap-5">
-              {[
-                {
-                  title: "Temporal versioning",
-                  tag: "asOf query support",
-                  desc: "Every write is a timestamped event. Query facts as they were at any point in time — not just the current truth. Full ordered history per entity + key.",
-                  color: "teal",
-                },
-                {
-                  title: "Memory decay",
-                  tag: "Ebbinghaus model, opt-in",
-                  desc: "Facts lose confidence without reinforcement over time. The Archivist processes decay on a configurable schedule. Surfaces stale knowledge before it misleads agents.",
-                  color: "amber",
-                },
-                {
-                  title: "Namespace API keys",
-                  tag: "Fine-grained auth",
-                  desc: "API keys are scoped to entity namespaces — e.g. kb:read:project/acme. An agent can read from one project without write access, or read access to another.",
-                  color: "teal",
-                },
-              ].map((cap) => (
-                <div
-                  key={cap.title}
-                  className={`p-5 rounded-xl border ${cap.color === "teal" ? "border-teal-500/20 bg-teal-500/5" : "border-amber-500/20 bg-amber-500/5"}`}
-                >
-                  <div className={`text-xs font-mono mb-1 ${cap.color === "teal" ? "text-teal-500" : "text-amber-500"}`}>
-                    {cap.tag}
-                  </div>
-                  <h3 className={`text-sm font-semibold mb-2 ${cap.color === "teal" ? "text-teal-400" : "text-amber-400"}`}>
-                    {cap.title}
-                  </h3>
-                  <p className="text-sm text-[var(--text-muted)] leading-relaxed">{cap.desc}</p>
-                </div>
-              ))}
-            </div>
+            {/* Capability cards — animated */}
+            <ProductCapabilityCards />
           </div>
         </section>
 
