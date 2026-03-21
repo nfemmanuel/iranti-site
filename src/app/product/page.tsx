@@ -6,11 +6,11 @@ import ProductStaffCards from "@/components/ProductStaffCards";
 import ProductCapabilityCards from "@/components/ProductCapabilityCards";
 
 export const metadata: Metadata = {
-  title: "Product — Iranti vs LangChain Memory, MemGPT, and Vector Databases",
+  title: "Product — Iranti: Identity-First Memory Infrastructure for Multi-Agent AI",
   description:
     "Iranti is multi-agent memory infrastructure: persistent, identity-first, conflict-aware. Compare against LangChain memory, MemGPT/Letta, CrewAI memory, and vector databases. The Staff architecture explained.",
   openGraph: {
-    title: "Product — Iranti vs LangChain Memory, MemGPT, and Vector Databases",
+    title: "Product — Iranti: Identity-First Memory Infrastructure for Multi-Agent AI",
     description:
       "Iranti is multi-agent memory infrastructure: persistent, identity-first, conflict-aware. Compare against LangChain memory, MemGPT/Letta, CrewAI memory, and vector databases.",
     type: "website",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product — Iranti vs LangChain Memory, MemGPT, and Vector Databases",
+    title: "Product — Iranti: Identity-First Memory Infrastructure for Multi-Agent AI",
     description:
       "Iranti is multi-agent memory infrastructure: persistent, identity-first, conflict-aware. Compare against LangChain memory, MemGPT/Letta, CrewAI memory, and vector databases.",
   },
