@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { IrantiMark } from "./Logo";
 
 const links = [
   { label: "Product", href: "/product" },
@@ -36,21 +37,7 @@ export default function Nav() {
           className="flex items-center gap-2.5 group"
           aria-label="Iranti home"
         >
-          <span className="w-6 h-6 rounded-sm bg-amber-500 flex items-center justify-center flex-shrink-0">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              aria-hidden="true"
-            >
-              <circle cx="7" cy="7" r="2.5" fill="#080808" />
-              <circle cx="2" cy="4" r="1.5" fill="#080808" opacity="0.7" />
-              <circle cx="12" cy="4" r="1.5" fill="#080808" opacity="0.7" />
-              <circle cx="2" cy="10" r="1.5" fill="#080808" opacity="0.5" />
-              <circle cx="12" cy="10" r="1.5" fill="#080808" opacity="0.5" />
-            </svg>
-          </span>
+          <IrantiMark size={24} />
           <span className="text-[var(--text-primary)] font-semibold text-[15px] tracking-[-0.01em]">
             iranti
           </span>

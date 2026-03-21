@@ -23,12 +23,14 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://iranti.dev",
     siteName: "Iranti",
+    images: [{ url: "https://iranti.dev/og", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Iranti — Memory Infrastructure for Multi-Agent AI",
     description:
       "Persistent, identity-based shared memory for multi-agent AI systems. Conflict-aware. Framework-agnostic. Not an agent framework — infrastructure.",
+    images: ["https://iranti.dev/og"],
   },
 };
 
