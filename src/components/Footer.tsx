@@ -19,18 +19,18 @@ export default function Footer() {
               heading: "Docs",
               links: [
                 { label: "Docs overview", href: "/docs" },
-                { label: "Quickstart", href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/quickstart.md" },
-                { label: "Claude Code guide", href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/claude-code.md" },
-                { label: "Codex guide", href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/codex.md" },
+                { label: "Quickstart", href: "/docs" },
+                { label: "Claude Code guide", href: "/docs" },
+                { label: "Codex guide", href: "/docs" },
               ],
             },
             {
-              heading: "Research",
+              heading: "Evidence",
               links: [
-                { label: "Current benchmark state", href: "https://github.com/nfemmanuel/iranti-benchmarking/blob/main/articles/CURRENT-BENCHMARK-STATE.md" },
-                { label: "Technical benchmark state", href: "https://github.com/nfemmanuel/iranti-benchmarking/blob/main/papers/CURRENT-BENCHMARK-STATE-TECHNICAL.md" },
-                { label: "Benchmark repo", href: "https://github.com/nfemmanuel/iranti-benchmarking" },
-                { label: "Main repo", href: "https://github.com/nfemmanuel/iranti" },
+                { label: "Evidence overview", href: "/evidence" },
+                { label: "Entity retrieval", href: "/evidence/b1" },
+                { label: "Conflict handling", href: "/evidence/b3" },
+                { label: "Upgrade continuity", href: "/evidence/b7" },
               ],
             },
             {
@@ -39,7 +39,7 @@ export default function Footer() {
                 { label: "iranti (npm)", href: "https://www.npmjs.com/package/iranti" },
                 { label: "@iranti/sdk (npm)", href: "https://www.npmjs.com/package/@iranti/sdk" },
                 { label: "iranti (PyPI)", href: "https://pypi.org/project/iranti/" },
-                { label: "AGPL license", href: "https://www.gnu.org/licenses/agpl-3.0.en.html" },
+                { label: "AGPL-3.0 license", href: "https://www.gnu.org/licenses/agpl-3.0.en.html" },
               ],
             },
           ].map((col) => (
@@ -83,7 +83,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
             <span>v{CURRENT_VERSION}</span>
             <span>AGPL-3.0</span>
-            <span>Evidence-first positioning. Narrow claims. Public repos.</span>
+            <span>Evidence-first positioning. Narrow claims.</span>
           </div>
         </div>
       </div>
