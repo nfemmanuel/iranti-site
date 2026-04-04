@@ -73,7 +73,7 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
-            href="mailto:hello@iranti.dev"
+            href="mailto:powerhousexiv@gmail.com"
             className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
           >
             Request early access

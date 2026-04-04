@@ -247,7 +247,7 @@ export default function ProofPage() {
                 Read the product story
               </Link>
               <a
-                href="mailto:hello@iranti.dev"
+                href="mailto:powerhousexiv@gmail.com"
                 className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
               >
                 Request access

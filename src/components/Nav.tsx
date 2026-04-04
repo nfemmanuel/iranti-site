@@ -81,7 +81,7 @@ export default function Nav() {
             GitHub
           </a>
           <a
-            href="mailto:hello@iranti.dev"
+            href="mailto:powerhousexiv@gmail.com"
             className="px-4 py-1.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded transition-colors"
           >
             Request access
@@ -137,7 +137,7 @@ export default function Nav() {
               GitHub
             </a>
             <a
-              href="mailto:hello@iranti.dev"
+              href="mailto:powerhousexiv@gmail.com"
               className="w-full text-center px-4 py-2 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded transition-colors"
             >
               Request access

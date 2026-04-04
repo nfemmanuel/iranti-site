@@ -178,7 +178,7 @@ export default function DocsPage() {
             </div>
             <div className="flex gap-3 flex-shrink-0">
               <Link href="/evidence" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">Read the evidence</Link>
-              <a href="mailto:hello@iranti.dev" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">Request access</a>
+              <a href="mailto:powerhousexiv@gmail.com" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">Request access</a>
             </div>
           </div>
         </section>
