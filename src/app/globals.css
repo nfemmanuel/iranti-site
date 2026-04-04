@@ -66,11 +66,11 @@
   --bg-code:        #e8e4dc;
   --border-subtle:  #e2ddd6;
   --border-light:   #d4cfc8;
-  --text-primary:   #1a1a18;
-  --text-secondary: #4a4a46;
-  --text-muted:     #7a7a76;
-  --text-faint:     #9a9a96;
-  --text-code:      #2a2a26;
+  --text-primary:   #111110;
+  --text-secondary: #2e2e2a;
+  --text-muted:     #52524e;
+  --text-faint:     #747470;
+  --text-code:      #1a1a16;
   --border-medium:  #b8b3aa;
   --on-amber:       #1c1a17;
 

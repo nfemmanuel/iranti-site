@@ -494,7 +494,7 @@ export default function B2Page() {
         {/* Breadcrumb */}
         <div className="px-6 pt-8 max-w-4xl mx-auto">
           <div className="flex items-center gap-2 text-xs text-[var(--text-faint)] font-mono mb-8">
-            <Link href="/proof" className="hover:text-[var(--text-muted)] transition-colors">proof</Link>
+            <Link href="/evidence" className="hover:text-[var(--text-muted)] transition-colors">proof</Link>
             <span>/</span>
             <span className="text-[var(--text-secondary)]">b2</span>
           </div>
@@ -763,7 +763,7 @@ export default function B2Page() {
               >
                 iranti-benchmarking →
               </a>
-              <Link href="/proof" className="px-4 py-2 text-[var(--text-muted)] hover:text-[var(--text-secondary)] text-sm transition-colors">
+              <Link href="/evidence" className="px-4 py-2 text-[var(--text-muted)] hover:text-[var(--text-secondary)] text-sm transition-colors">
                 ← All benchmarks
               </Link>
             </div>

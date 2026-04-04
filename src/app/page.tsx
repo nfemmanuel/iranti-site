@@ -4,7 +4,6 @@ import WhyNotVectorDB from "@/components/WhyNotVectorDB";
 import TheStaff from "@/components/TheStaff";
 import Proof from "@/components/Proof";
 import Integrations from "@/components/Integrations";
-import Install from "@/components/Install";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -13,11 +12,10 @@ export default function Home() {
     <main className="min-h-screen" style={{ background: "var(--bg-base)" }}>
       <Nav />
       <Hero />
-      <WhyNotVectorDB />
-      <TheStaff />
       <Proof />
+      <WhyNotVectorDB />
       <Integrations />
-      <Install />
+      <TheStaff />
       <Contact />
       <Footer />
     </main>

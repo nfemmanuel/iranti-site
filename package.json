@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && next dev",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
+    "dev": "node scripts/dev-server.mjs",
+    "dev:clean": "npm run clean && node scripts/dev-server.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import { IrantiMark } from "./Logo";
 
 const links = [
   { label: "Product", href: "/product" },
-  { label: "Proof", href: "/proof" },
+  { label: "Evidence", href: "/evidence" },
   { label: "Docs", href: "/docs" },
   { label: "Integrations", href: "/integrations" },
 ];
@@ -15,6 +16,7 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24);
@@ -31,7 +33,6 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Wordmark */}
         <Link
           href="/"
           className="flex items-center gap-2.5 group"
@@ -41,23 +42,25 @@ export default function Nav() {
           <span className="text-[var(--text-primary)] font-semibold text-[15px] tracking-[-0.01em]">
             iranti
           </span>
-          <span className="text-[var(--text-muted)] text-xs font-mono">v0.2.12</span>
         </Link>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.label}
               href={l.href}
-              className="px-3 py-1.5 text-sm text-[var(--text-code)] hover:text-[var(--text-primary)] transition-colors"
+              aria-current={pathname === l.href || pathname.startsWith(l.href + "/") ? "page" : undefined}
+              className={`px-3 py-1.5 text-sm transition-colors ${
+                pathname === l.href || pathname.startsWith(l.href + "/")
+                  ? "text-[var(--text-primary)] underline underline-offset-4 decoration-[var(--text-muted)]"
+                  : "text-[var(--text-code)] hover:text-[var(--text-primary)]"
+              }`}
             >
               {l.label}
             </Link>
           ))}
         </div>
 
-        {/* CTA */}
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
           <a
@@ -77,15 +80,14 @@ export default function Nav() {
             </svg>
             GitHub
           </a>
-          <Link
-            href="/get-started"
+          <a
+            href="mailto:hello@iranti.dev"
             className="px-4 py-1.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded transition-colors"
           >
-            Get started
-          </Link>
+            Request access
+          </a>
         </div>
 
-        {/* Mobile menu button */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
           <button
@@ -109,14 +111,17 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-[var(--bg-surface)] border-t border-[var(--border-subtle)] px-6 py-4 space-y-1">
           {links.map((l) => (
             <Link
               key={l.label}
               href={l.href}
-              className="block py-2 text-sm text-[var(--text-code)] hover:text-[var(--text-primary)] transition-colors"
+              className={`block py-2 text-sm transition-colors ${
+                pathname === l.href || pathname.startsWith(l.href + "/")
+                  ? "text-[var(--text-primary)] underline underline-offset-4 decoration-[var(--text-muted)]"
+                  : "text-[var(--text-code)] hover:text-[var(--text-primary)]"
+              }`}
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -131,13 +136,12 @@ export default function Nav() {
             >
               GitHub
             </a>
-            <Link
-              href="/get-started"
-              className="py-2 text-sm font-medium text-amber-500 hover:text-amber-400 transition-colors"
-              onClick={() => setOpen(false)}
+            <a
+              href="mailto:hello@iranti.dev"
+              className="w-full text-center px-4 py-2 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded transition-colors"
             >
-              Get started →
-            </Link>
+              Request access
+            </a>
           </div>
         </div>
       )}

@@ -1,4 +1,5 @@
 import React from "react";
+import { CURRENT_VERSION } from "@/lib/siteData";
 
 // ─── IrantiMark ─────────────────────────────────────────────────────────────
 // Five-node memory graph: amber center hub, four corner nodes with spokes.
@@ -150,7 +151,7 @@ export default function Logo({ size = 24, variant = "full", color }: LogoProps) 
               lineHeight: 1,
             }}
           >
-            v0.2.12
+            v{CURRENT_VERSION}
           </span>
         </div>
       </div>

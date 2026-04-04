@@ -1,17 +1,18 @@
+import { CURRENT_VERSION } from "@/lib/siteData";
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border-subtle)] py-16 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Links grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {[
             {
               heading: "Product",
               links: [
-                { label: "How it works", href: "/product" },
-                { label: "Proof & benchmarks", href: "/proof" },
+                { label: "Why Iranti", href: "/product" },
+                { label: "Evidence", href: "/evidence" },
                 { label: "Integrations", href: "/integrations" },
-                { label: "Get started", href: "/get-started" },
+                { label: "Request access", href: "mailto:hello@iranti.dev" },
               ],
             },
             {
@@ -20,16 +21,16 @@ export default function Footer() {
                 { label: "Docs overview", href: "/docs" },
                 { label: "Quickstart", href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/quickstart.md" },
                 { label: "Claude Code guide", href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/claude-code.md" },
-                { label: "Security", href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/security-quickstart.md" },
+                { label: "Codex guide", href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/codex.md" },
               ],
             },
             {
-              heading: "Community",
+              heading: "Research",
               links: [
-                { label: "GitHub", href: "https://github.com/nfemmanuel/iranti" },
-                { label: "Issues", href: "https://github.com/nfemmanuel/iranti/issues" },
-                { label: "Discussions", href: "https://github.com/nfemmanuel/iranti/discussions" },
-                { label: "Changelog", href: "https://github.com/nfemmanuel/iranti/blob/main/CHANGELOG.md" },
+                { label: "Current benchmark state", href: "https://github.com/nfemmanuel/iranti-benchmarking/blob/main/articles/CURRENT-BENCHMARK-STATE.md" },
+                { label: "Technical benchmark state", href: "https://github.com/nfemmanuel/iranti-benchmarking/blob/main/papers/CURRENT-BENCHMARK-STATE-TECHNICAL.md" },
+                { label: "Benchmark repo", href: "https://github.com/nfemmanuel/iranti-benchmarking" },
+                { label: "Main repo", href: "https://github.com/nfemmanuel/iranti" },
               ],
             },
             {
@@ -64,7 +65,6 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[var(--text-faint)]">
           <div className="flex items-center gap-2.5">
             <span className="w-5 h-5 rounded-sm bg-amber-500 flex items-center justify-center flex-shrink-0">
@@ -77,33 +77,17 @@ export default function Footer() {
               </svg>
             </span>
             <span>
-              <strong className="text-[var(--text-muted)]">iranti</strong> — memory infrastructure for multi-agent AI
+              <strong className="text-[var(--text-muted)]">iranti</strong> - shared memory and recovery infrastructure for multi-agent workflows
             </span>
           </div>
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-            <span>v0.2.12</span>
+            <span>v{CURRENT_VERSION}</span>
             <span>AGPL-3.0</span>
-            <span>
-              Built by{" "}
-              <a
-                href="https://github.com/nfemmanuel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-[var(--text-code)] transition-colors"
-              >
-                @nfemmanuel
-              </a>
-              {" · "}
-              <a
-                href="mailto:hello@iranti.dev"
-                className="text-[var(--text-muted)] hover:text-[var(--text-code)] transition-colors"
-              >
-                hello@iranti.dev
-              </a>
-            </span>
+            <span>Evidence-first positioning. Narrow claims. Public repos.</span>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

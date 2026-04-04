@@ -26,6 +26,16 @@ Every agent should:
 4. record assumptions instead of inventing certainty
 5. check with the PM before changing product strategy, positioning, information architecture, naming, roadmap, or acceptance criteria
 
+## Evidence Rule
+
+The site must describe the installed Iranti product truthfully.
+
+Treat these as hard rules:
+- benchmark or product claims must match the current audited evidence
+- if a benchmark track is yellow, null, or blocked, the site must not present it as a green proof point
+- installed CLI/runtime behavior beats stale copy assumptions
+- `.env.iranti` is a binding pointer, not proof of runtime state
+
 ## PM Coordination Rule
 This repo's Product Manager must also stay aligned with the control-plane PM in:
 - `C:\Users\NF\Documents\Projects\iranti-control-plane`
@@ -100,6 +110,14 @@ A task is done when:
 - risks are documented
 - relevant evidence exists
 - PM has enough evidence to accept the work
+
+## Claim Review Rule
+
+For proof, benchmark, onboarding, or product-comparison work, completion reports should show:
+1. what changed
+2. what evidence supports it
+3. what remains uncertain
+4. what the site must not claim yet
 
 ## Suggested Iranti Entities
 - `project/iranti_site`

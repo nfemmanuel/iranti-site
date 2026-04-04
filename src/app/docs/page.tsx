@@ -2,98 +2,79 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { researchLinks } from "@/lib/siteData";
 
 export const metadata: Metadata = {
-  title: "Docs — Iranti Agent Memory Infrastructure",
+  title: "Docs - Iranti Guides, Concepts, and Research Links",
   description:
-    "Iranti documentation: quickstart, Claude Code MCP setup, Codex integration, security guide, and concept reference for entity+key memory, conflict resolution, and agent isolation.",
+    "Iranti documentation hub: setup guides, integration paths, product concepts, and evidence links for the current benchmark record.",
   openGraph: {
-    title: "Docs — Iranti Agent Memory Infrastructure",
+    title: "Docs - Iranti Guides, Concepts, and Research Links",
     description:
-      "Iranti documentation: quickstart, Claude Code MCP setup, Codex integration, security guide, and concept reference for entity+key memory, conflict resolution, and agent isolation.",
+      "Guides for setup and integrations, plus concept pages and benchmark research links for Iranti.",
     type: "website",
     url: "https://iranti.dev/docs",
     siteName: "Iranti",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Docs — Iranti Agent Memory Infrastructure",
+    title: "Docs - Iranti Guides, Concepts, and Research Links",
     description:
-      "Iranti documentation: quickstart, Claude Code MCP setup, Codex integration, security guide, and concept reference for entity+key memory, conflict resolution, and agent isolation.",
+      "Guides for setup and integrations, plus concept pages and benchmark research links for Iranti.",
   },
 };
 
 const guides = [
   {
     title: "Quickstart",
-    desc: "Install the CLI, start an instance, bind a project, and write your first fact. Covers Node.js + PostgreSQL setup.",
+    desc: "Install the CLI, bring a database, start an instance, and bind a project.",
     href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/quickstart.md",
-    tag: "Guide",
-    tagColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
     time: "10 min",
   },
   {
-    title: "Claude Code Integration",
-    desc: "Configure the MCP server, install SessionStart hooks, and use iranti_write / iranti_query from Claude Code. One command setup.",
+    title: "Claude Code guide",
+    desc: "Current MCP and hook setup for Claude Code, including workspace MCP and response-persistence hooks.",
     href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/claude-code.md",
-    tag: "Guide",
-    tagColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
     time: "5 min",
   },
   {
-    title: "Codex Integration",
-    desc: "Register Iranti in the global Codex MCP config. One-time setup gives every bound project access to memory tools.",
+    title: "Codex guide",
+    desc: "Current Codex setup path, including global configuration and VS Code MCP scaffolding.",
     href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/codex.md",
-    tag: "Guide",
-    tagColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
     time: "5 min",
   },
   {
-    title: "Security Quickstart",
-    desc: "API key configuration, instance isolation modes (shared vs isolated), and network security considerations for production.",
-    href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/security-quickstart.md",
-    tag: "Guide",
-    tagColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
-    time: "8 min",
+    title: "Manual / operator flow",
+    desc: "Use the CLI as an operator surface for status, doctor, repair, lifecycle, and project binding tasks.",
+    href: "https://github.com/nfemmanuel/iranti/blob/main/docs/guides/manual.md",
+    time: "12 min",
   },
 ];
 
 const concepts = [
   {
-    title: "Entity + Key model",
-    desc: "Facts are stored as entity/key pairs. An entity is a typed identifier (project/my_project, user/alice). A key names the specific fact. Together they form the primary lookup address.",
-    tag: "Concept",
-    tagColor: "text-teal-500 bg-teal-500/10 border-teal-500/20",
+    title: "Entity + key memory",
+    desc: "Iranti is strongest when an agent can address the fact it wants directly. That is why entity + key is the core retrieval model.",
   },
   {
-    title: "Confidence scoring",
-    desc: "Every write carries a confidence score (0–100). When two agents write conflicting values for the same entity+key, the higher-confidence value wins. Ties use timestamps. Gaps < 10 escalate to LLM arbitration.",
-    tag: "Concept",
-    tagColor: "text-teal-500 bg-teal-500/10 border-teal-500/20",
+    title: "The Staff",
+    desc: "The Library, Librarian, Attendant, Archivist, and Resolutionist divide memory responsibilities into inspectable components with bounded jobs.",
   },
   {
-    title: "Conflict resolution",
-    desc: "Iranti detects same entity+key conflicts automatically. Resolution is deterministic for large confidence gaps. LLM arbitration handles ambiguous cases. Unresolvable conflicts escalate to escalation/active/.",
-    tag: "Concept",
-    tagColor: "text-teal-500 bg-teal-500/10 border-teal-500/20",
+    title: "Shared versus personal memory",
+    desc: "Personal preferences belong on personal entities such as user/main. Project state belongs on project entities. The system now routes those separately.",
   },
   {
-    title: "Agent isolation modes",
-    desc: "Isolated mode: each agent has its own namespace. Shared mode: all agents in a project share the same entity space. Mode is set at project init time via --mode isolated or --mode shared.",
-    tag: "Concept",
-    tagColor: "text-teal-500 bg-teal-500/10 border-teal-500/20",
+    title: "Conflict and escalation",
+    desc: "Deterministic conflicts resolve automatically when the confidence gap is clear. Ambiguous cases should be understood as conservative and escalation-prone.",
   },
   {
-    title: "The Staff architecture",
-    desc: "Iranti is composed of five internal components: Librarian (ingestion + conflict detection), Attendant (retrieval + briefing), Archivist (long-term storage), Resolutionist (conflict resolution), Doorman (session hooks).",
-    tag: "Concept",
-    tagColor: "text-teal-500 bg-teal-500/10 border-teal-500/20",
+    title: "Recovery and handoff",
+    desc: "Iranti helps most when work crosses agent boundaries, process boundaries, or restart boundaries. Explicit retrieval still beats hoping the model remembers.",
   },
   {
-    title: "iranti chat",
-    desc: "Interactive terminal session for inspecting and writing memory directly. Use /history, /relate, /confidence, /conflicts, /write, and /query. Not an agent — a direct interface to the knowledge base.",
-    tag: "CLI",
-    tagColor: "text-[var(--text-muted)] bg-[var(--border-subtle)] border-[var(--border-light)]",
+    title: "Operator visibility",
+    desc: "Health, doctor, repair, bindings, version drift, and runtime lifecycle are part of the product story, not afterthoughts.",
   },
 ];
 
@@ -103,134 +84,101 @@ export default function DocsPage() {
       <Nav />
 
       <main className="pt-24 pb-16">
-        {/* Hero */}
         <section className="px-6 py-16 max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-6 h-px bg-amber-500" />
-            <span className="text-xs text-amber-500 font-mono uppercase tracking-wider">
-              Docs
-            </span>
+            <span className="text-xs text-amber-500 font-mono uppercase tracking-wider">Docs</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-[var(--text-primary)] mb-6 max-w-3xl">
-            Documentation.
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-[var(--text-primary)] mb-6 max-w-4xl">
+            Use the docs to get live.
             <br />
-            <span className="text-[var(--text-muted)]">Full source on GitHub.</span>
+            <span className="text-[var(--text-muted)]">Use the research links when you need claim discipline.</span>
           </h1>
-          <p className="text-lg text-[var(--text-secondary)] max-w-2xl leading-relaxed mb-6">
-            Guides and concept reference are below. All docs live in the GitHub
-            repository alongside the source — they are versioned with the code
-            and kept current.
+          <p className="text-lg text-[var(--text-secondary)] max-w-3xl leading-relaxed">
+            Iranti has two different documentation jobs: help you install and use the system,
+            and help you understand what the current evidence does and does not support.
+            This page keeps those jobs separate so evaluation stays clear.
           </p>
-          <a
-            href="https://github.com/nfemmanuel/iranti"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-amber-500 hover:text-amber-400 transition-colors"
-          >
-            github.com/nfemmanuel/iranti →
-          </a>
         </section>
 
-        {/* Guides */}
         <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-3 mb-10">
+            <div className="flex items-center gap-3 mb-8">
               <div className="w-6 h-px bg-amber-500" />
-              <span className="text-xs text-amber-500 font-mono uppercase tracking-wider">
-                Guides
-              </span>
+              <span className="text-xs text-amber-500 font-mono uppercase tracking-wider">Guides</span>
             </div>
-
             <div className="grid md:grid-cols-2 gap-5">
-              {guides.map((g) => (
+              {guides.map((guide) => (
                 <a
-                  key={g.title}
-                  href={g.href}
+                  key={guide.title}
+                  href={guide.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[var(--border-light)] rounded-xl transition-colors"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <div className="flex items-center gap-2">
-                      <span className={`px-2 py-0.5 rounded-full border text-xs ${g.tagColor}`}>
-                        {g.tag}
-                      </span>
-                    </div>
-                    <span className="text-xs text-[var(--text-faint)] font-mono">{g.time}</span>
+                    <span className="px-2 py-0.5 rounded-full border text-xs text-amber-500 bg-amber-500/10 border-amber-500/20">Guide</span>
+                    <span className="text-xs text-[var(--text-faint)] font-mono">{guide.time}</span>
                   </div>
-                  <h3 className="text-base font-semibold text-[var(--text-code)] group-hover:text-[var(--text-primary)] transition-colors mb-2">
-                    {g.title}
-                  </h3>
-                  <p className="text-sm text-[var(--text-muted)] leading-relaxed">{g.desc}</p>
+                  <h3 className="text-base font-semibold text-[var(--text-code)] group-hover:text-[var(--text-primary)] transition-colors mb-2">{guide.title}</h3>
+                  <p className="text-sm text-[var(--text-muted)] leading-relaxed">{guide.desc}</p>
                 </a>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Concepts */}
         <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-6 h-px bg-teal-500" />
-              <span className="text-xs text-teal-500 font-mono uppercase tracking-wider">
-                Concepts
-              </span>
+              <span className="text-xs text-teal-500 font-mono uppercase tracking-wider">Core ideas</span>
             </div>
-            <p className="text-[var(--text-muted)] text-sm mb-10 max-w-xl">
-              Core model and vocabulary for understanding how Iranti works.
+            <p className="text-[var(--text-muted)] text-sm mb-10 max-w-2xl">
+              Six ideas that explain how Iranti works and why the architecture choices matter.
             </p>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {concepts.map((c) => (
-                <div
-                  key={c.title}
-                  className="p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className={`px-2 py-0.5 rounded-full border text-xs ${c.tagColor}`}>
-                      {c.tag}
-                    </span>
-                  </div>
-                  <h3 className="text-sm font-semibold text-[var(--text-code)] mb-2">
-                    {c.title}
-                  </h3>
-                  <p className="text-xs text-[var(--text-muted)] leading-relaxed">{c.desc}</p>
+              {concepts.map((concept) => (
+                <div key={concept.title} className="p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl">
+                  <h3 className="text-sm font-semibold text-[var(--text-code)] mb-2">{concept.title}</h3>
+                  <p className="text-sm text-[var(--text-muted)] leading-relaxed">{concept.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* API reference placeholder */}
         <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
           <div className="max-w-6xl mx-auto">
-            <div className="p-6 border border-[var(--border-subtle)] rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div>
-                <div className="text-xs text-[var(--text-faint)] font-mono mb-2 uppercase tracking-wider">
-                  API Reference
-                </div>
-                <p className="text-sm text-[var(--text-muted)] max-w-md">
-                  The full REST API reference, Python SDK reference, and TypeScript SDK reference
-                  are available in the GitHub repository.
-                </p>
-              </div>
-              <div className="flex gap-3 flex-shrink-0">
-                <a
-                  href="https://github.com/nfemmanuel/iranti/tree/main/docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors"
-                >
-                  Browse docs on GitHub
-                </a>
-                <Link
-                  href="/get-started"
-                  className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
-                >
-                  Get started
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-6 h-px bg-teal-500" />
+              <span className="text-xs text-teal-500 font-mono uppercase tracking-wider">Research and evidence</span>
+            </div>
+            <div className="grid md:grid-cols-2 gap-5 mb-8">
+              {researchLinks.map((link) => (
+                <Link key={link.title} href={link.href} className="p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl hover:border-[var(--border-light)] transition-colors">
+                  <div className="text-sm font-semibold text-[var(--text-code)] mb-2">{link.title}</div>
+                  <p className="text-sm text-[var(--text-muted)] leading-relaxed">{link.description}</p>
                 </Link>
-              </div>
+              ))}
+            </div>
+            <div className="p-5 border border-[var(--border-subtle)] rounded-xl bg-[var(--bg-surface)] max-w-3xl">
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                The evidence pages cover benchmark methodology, trial data, and exact claim boundaries. Start with the overview, then go deeper on individual benchmarks.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[var(--text-primary)] mb-2">Want to try it yourself?</h2>
+              <p className="text-[var(--text-muted)] text-sm max-w-xl">Closed beta is running now. Reach out to request early access and be among the first to run your own workflow on Iranti.</p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <Link href="/evidence" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">Read the evidence</Link>
+              <a href="mailto:hello@iranti.dev" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">Request access</a>
             </div>
           </div>
         </section>
@@ -240,3 +188,4 @@ export default function DocsPage() {
     </div>
   );
 }
+

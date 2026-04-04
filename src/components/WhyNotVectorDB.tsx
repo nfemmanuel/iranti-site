@@ -44,18 +44,18 @@ const rows = [
 const keyPoints = [
   {
     icon: "⬡",
-    label: "Not a framework",
-    desc: "Iranti does not orchestrate tasks. It stores and retrieves facts.",
+    label: "Shared source of truth",
+    desc: "One agent can write a fact and another can retrieve it later without inheriting the first agent's prompt state.",
   },
   {
     icon: "⬡",
-    label: "Framework-agnostic",
-    desc: "Works with CrewAI, LangChain, raw API calls, or any other stack.",
+    label: "Infrastructure, not lock-in",
+    desc: "Iranti sits under Claude Code, Codex, SDK clients, and frameworks instead of forcing a new agent stack.",
   },
   {
     icon: "⬡",
-    label: "Self-hostable",
-    desc: "Runs on your PostgreSQL. Your data stays yours.",
+    label: "Operator-visible by design",
+    desc: "Facts, provenance, conflicts, health, and recovery are inspectable when reliability matters more than magic.",
   },
 ];
 
@@ -94,28 +94,20 @@ export default function WhyNotVectorDB() {
           {/* Left: text */}
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-[var(--text-primary)] mb-6 leading-tight">
-              Vector databases answer{" "}
-              <span className="text-[var(--text-muted)]">
-                "what&apos;s similar to X?"
-              </span>
+              Context windows and vector search help
               <br />
-              Iranti answers{" "}
-              <span className="text-amber-500">
-                "what do we know about X?"
-              </span>
+              <span className="text-amber-500">until the workflow has to survive handoffs.</span>
             </h2>
 
             <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
-              Multi-agent systems need more than nearest-neighbor retrieval.
-              When Agent A writes a deadline, Agent B needs to look it up by
-              name — not approximate a semantically similar one. And when two
-              agents disagree about the same fact, someone has to be in charge
-              of resolving that.
+              The pain point is not "how do I store more embeddings?" It is "how do I stop losing state
+              when work moves between agents, sessions, tools, and operators?" Iranti is built for that
+              second problem.
             </p>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
-              Iranti is the memory layer that sits underneath your agents —
-              not inside any one framework, not tied to any one model provider.
-              Your agents plug in. The memory persists.
+              When Agent A writes a deadline, Agent B should be able to retrieve the exact fact later.
+              When two agents disagree, there should be a visible conflict path. When the tool changes,
+              the memory should still be there. That is the wedge.
             </p>
 
             {/* Key point cards — staggered reveal */}
@@ -193,3 +185,4 @@ export default function WhyNotVectorDB() {
     </section>
   );
 }
+

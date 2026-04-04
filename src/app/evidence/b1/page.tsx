@@ -23,7 +23,9 @@ const SCALE_DATA: ScaleRow[] = [
   { label: "N=20",             n: "20",  tokens: "~1.6k tok",  baseline: 100, iranti: null, adversarial: false },
   { label: "N=20+adversarial", n: "20+", tokens: "~1.6k tok",  baseline: 100, iranti: null, adversarial: true  },
   { label: "N=100",            n: "100", tokens: "~8k tok",    baseline: 100, iranti: 100,  adversarial: false },
-  { label: "N=500",            n: "500", tokens: "~28k tok",   baseline: 100, iranti: 100,  adversarial: false },
+  { label: "N=500",            n: "500",  tokens: "~28k tok",   baseline: 100, iranti: 100,  adversarial: false },
+  { label: "N=1000",           n: "1000", tokens: "~57k tok",   baseline: 100, iranti: 100,  adversarial: false },
+  { label: "N=5000",           n: "5000", tokens: "~276k tok",  baseline: null, iranti: 100,  adversarial: false },
 ];
 
 const NEEDLE_ENTITIES = [
@@ -112,7 +114,7 @@ function AccuracyChart() {
   for (const row of SCALE_DATA) {
     const bars: Array<{ pct: number; kind: "baseline" | "iranti"; score: string }> = [];
     if (row.baseline !== null) bars.push({ pct: row.baseline / 100, kind: "baseline", score: "10/10" });
-    if (row.iranti !== null)   bars.push({ pct: row.iranti  / 100, kind: "iranti",   score: row.label === "N=100" ? "8/8" : "10/10" });
+    if (row.iranti !== null)   bars.push({ pct: row.iranti  / 100, kind: "iranti",   score: row.label === "N=100" ? "8/8" : row.label === "N=5000" ? "4/4" : "10/10" });
     rows.push({ label: row.label, tokens: row.tokens, adversarial: !!row.adversarial, bars, y });
     y += bars.length * (BAR_HEIGHT + GAP) + GROUP_GAP;
   }
@@ -135,7 +137,7 @@ function AccuracyChart() {
             <svg width="32" height="8" viewBox="0 0 32 8">
               <line x1="0" y1="4" x2="32" y2="4" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" />
             </svg>
-            Projected degradation (N≥1000)
+            Baseline infeasible at N≥5000
           </div>
         </div>
 
@@ -188,7 +190,7 @@ function AccuracyChart() {
           {inView && (
             <line
               x1={LABEL_W + PROJ_START_X}
-              y1={(rows[4].y + BAR_HEIGHT / 2)}
+              y1={(rows[6].y + BAR_HEIGHT / 2)}
               x2={LABEL_W + CHART_W + 50}
               y2={totalH - 60}
               stroke="#f59e0b"
@@ -207,7 +209,7 @@ function AccuracyChart() {
             opacity="0.7"
             fontFamily="monospace"
           >
-            degradation regime not yet reached →
+            N=5000: baseline infeasible (276k tok &gt; 200k ctx limit) →
           </text>
 
           {rows.map((row) =>
@@ -520,7 +522,7 @@ export default function B1Page() {
         {/* ── Breadcrumb ── */}
         <div className="px-6 pt-8 max-w-4xl mx-auto">
           <nav className="flex items-center gap-2 text-[10px] text-[var(--text-faint)] font-mono mb-8" aria-label="Breadcrumb">
-            <Link href="/proof" className="hover:text-[var(--text-secondary)] transition-colors">
+            <Link href="/evidence" className="hover:text-[var(--text-secondary)] transition-colors">
               proof
             </Link>
             <span>/</span>
@@ -569,13 +571,13 @@ export default function B1Page() {
               <ScoreChip score="30/30" label="Baseline across N=5, N=20, adversarial" />
               <ScoreChip score="8/8"   label="Iranti retrieval arm — prior-session KB data" />
               <ScoreChip score="8/8"   label="Iranti write arm — full ingest → retrieve" />
-              <ScoreChip score="10/10" label="Iranti arm at N=500 (~28k tokens)" />
+              <ScoreChip score="4/4" label="Iranti arm at N=5000 (~276k tok) — first positive differential" />
             </div>
-            <Callout type="warn">
-              All arms are at ceiling. No differential found between baseline and Iranti at any tested
-              scale. The degradation regime requires N≥1000 entities. These results confirm Iranti
-              retrieval works correctly — they do not yet prove a performance advantage over
-              context-reading.
+            <Callout type="finding">
+              At N=5000 (~276k tokens), the baseline is infeasible — the registry document exceeds the
+              200k context window and cannot be read. Iranti returned all 4 target facts correctly via
+              exact key lookup. This is the first positive differential in the benchmark program: Iranti
+              4/4, baseline 0/4.
             </Callout>
           </div>
         </section>
@@ -588,8 +590,10 @@ export default function B1Page() {
               Both arms at ceiling across all tested N
             </h2>
             <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-8 max-w-2xl">
-              Every condition returned 100% accuracy. The amber dashed line marks the projected
-              degradation slope for context-reading beyond N=1000 — a regime not yet reached.
+              Both arms at ceiling through N=1000. At N=5000 (~276k tokens), the baseline becomes
+              infeasible — the haystack document exceeds Claude&apos;s 200k context window. Iranti
+              returned 4/4 facts via exact key lookup. The dashed region marks where baseline
+              context-reading can no longer run.
             </p>
             <AccuracyChart />
           </div>
@@ -645,6 +649,8 @@ export default function B1Page() {
                     { c: "N=20+adversarial", tokens: "~1.6k tok", note: "Wrong values injected for needle entities to test confound resistance" },
                     { c: "N=100",            tokens: "~8k tok",   note: "Larger haystack — both arms still at ceiling" },
                     { c: "N=500",            tokens: "~28k tok",  note: "Long context — both arms still at ceiling" },
+                    { c: "N=1000",           tokens: "~57k tok",  note: "Null differential confirmed — both arms at ceiling through ~57k tokens" },
+                    { c: "N=5000",           tokens: "~276k tok", note: "First positive differential: Iranti 4/4, baseline infeasible (document exceeds 200k context window)" },
                   ].map((row) => (
                     <tr key={row.c} className="border-t border-[var(--border-subtle)]">
                       <td className="py-3 pr-6 text-xs font-mono text-[var(--text-code)]">{row.c}</td>
@@ -796,11 +802,17 @@ export default function B1Page() {
                 <code className="font-mono text-xs bg-[var(--bg-surface)] px-1 rounded">contested</code>{" "}
                 fields. Context-reading returns none of this metadata.
               </Callout>
+              <Callout type="finding">
+                <strong>First positive differential at N=5000.</strong> At N=5000 (~276k tokens), the
+                haystack document exceeds the 200k context window — baseline context-reading is
+                infeasible. Iranti returned 4/4 facts correctly via exact key lookup. This is the
+                condition the program was built to find: Iranti 4/4, baseline 0/4.
+              </Callout>
               <Callout type="warn">
-                <strong>Degradation regime not yet reached.</strong> At N=500 (~28k tokens), both arms
-                remain at 100%. We cannot claim a retrieval advantage until the baseline degrades.
-                N=1000+ is required. These results should be read as &quot;Iranti retrieval works
-                correctly&quot; — not &quot;Iranti outperforms context-reading.&quot;
+                <strong>Infeasible is not the same as degraded.</strong> The baseline scored 0/4 because
+                the test could not be attempted — not because the model failed to find the needle. Both
+                are a practical outcome of the same thing (no answer), but they differ technically. In
+                either case, context-reading cannot serve a 5,000-entity knowledge base; Iranti can.
               </Callout>
               <Callout type="warn">
                 <strong>Self-evaluation bias.</strong> The same model (Claude Sonnet 4.6) designed the
@@ -839,7 +851,7 @@ export default function B1Page() {
                 iranti-benchmarking →
               </a>
               <Link
-                href="/proof"
+                href="/evidence"
                 className="px-4 py-2 text-[var(--text-muted)] hover:text-[var(--text-secondary)] text-sm font-mono transition-colors"
               >
                 ← all benchmarks

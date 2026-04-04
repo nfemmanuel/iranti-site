@@ -4,31 +4,31 @@ const staff = [
   {
     name: "Library",
     role: "Knowledge base",
-    desc: "PostgreSQL tables. Current truth lives in knowledge_base. Closed and contested intervals live in archive. Facts are attached to entities by key.",
+    desc: "PostgreSQL tables. Active truth in knowledge_base. Superseded truth in archive. Relationships in entity_relationships. Identity registry in entities with aliases in entity_aliases.",
     color: "amber",
   },
   {
     name: "Librarian",
     role: "Write manager",
-    desc: "All agent writes go through here. Detects conflicts, resolves them deterministically when possible, escalates to humans when genuinely ambiguous.",
+    desc: "All agent writes go through here. Detects conflicts, resolves them deterministically when possible, and escalates to humans when a disagreement is genuinely ambiguous.",
     color: "teal",
   },
   {
     name: "Attendant",
     role: "Per-agent memory",
-    desc: "One instance per agent. Manages working memory — what to load at session start, what to inject per turn, what to persist between sessions.",
+    desc: "One instance per external agent per process. Manages working memory: what to load at handshake, what to inject per turn, and what brief state to persist between sessions.",
     color: "teal",
   },
   {
     name: "Archivist",
     role: "Periodic cleanup",
-    desc: "Archives expired and low-confidence entries on a schedule. Processes human-resolved conflict files. Never deletes — worst case is a messy archive.",
+    desc: "Archives expired and low-confidence entries on a schedule. Processes human-resolved conflict files. Never deletes - worst case is a messy archive.",
     color: "amber",
   },
   {
     name: "Resolutionist",
     role: "Conflict review",
-    desc: "Interactive CLI for human conflict review. Reads pending escalation files, guides a reviewer through competing facts, writes authoritative resolutions.",
+    desc: "Interactive CLI for human conflict review. Reads pending escalation files, guides resolution, and writes AUTHORITATIVE_JSON for the Archivist to apply.",
     color: "amber",
   },
 ];
@@ -52,7 +52,6 @@ export default function TheStaff() {
   return (
     <section className="py-24 px-6 border-t border-[var(--border-subtle)]">
       <div className="max-w-6xl mx-auto">
-        {/* Section label */}
         <div className="flex items-center gap-3 mb-6">
           <div className="w-6 h-px bg-amber-500" />
           <span className="text-xs text-amber-500 font-mono uppercase tracking-wider">
@@ -63,22 +62,18 @@ export default function TheStaff() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-[-0.02em] text-[var(--text-primary)] mb-4 leading-tight">
-              Five components.
+              Why operators can trust it.
               <br />
-              <span className="text-[var(--text-muted)]">Called The Staff.</span>
+              <span className="text-[var(--text-muted)]">Because the moving parts stay visible.</span>
             </h2>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
-              Iranti is not a single process. It is a small system of
-              specialized components, each with a clear responsibility and a
-              clear interface. That design is what makes the memory layer
-              inspectable, maintainable, and honest about failure.
+              Iranti is not trying to hide its architecture behind magic language. The system is split into bounded components
+              so teams can understand how facts are written, loaded, archived, and disputed. That clarity is part of the product.
             </p>
 
-            {/* Animated architecture diagram */}
             <ArchDiagram />
           </div>
 
-          {/* Staff cards */}
           <div className="space-y-3">
             {staff.map((s) => {
               const c = colorMap[s.color as keyof typeof colorMap];
