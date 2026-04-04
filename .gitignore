@@ -37,3 +37,5 @@ npm-debug.log*
 .history/
 RESUME_NEXT_SESSION.md
 tmp-*
+
+.vercel
