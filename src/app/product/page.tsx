@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Product - Iranti Shared Memory and Recovery Infrastructure",
   description:
     "Iranti is shared memory and recovery infrastructure for multi-agent workflows: exact retrieval, durable facts, cross-tool handoff, bounded recovery, and operator visibility.",
+  alternates: { canonical: "/product" },
   openGraph: {
     title: "Product - Iranti Shared Memory and Recovery Infrastructure",
     description:
@@ -170,7 +171,7 @@ export default function ProductPage() {
               <p className="text-[var(--text-muted)] text-sm max-w-xl">The evidence page has the current benchmark state, real claim boundaries, and methodology links for serious evaluators.</p>
             </div>
             <div className="flex gap-3 flex-shrink-0">
-              <Link href="/evidence" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">See the evidence</Link>
+              <Link href="/benchmarks" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">See the evidence</Link>
               <a href="mailto:powerhousexiv@gmail.com" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">Request access</a>
             </div>
           </div>

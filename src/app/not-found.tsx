@@ -33,7 +33,7 @@ export default function NotFound() {
               Back home
             </Link>
             <Link
-              href="/evidence"
+              href="/benchmarks"
               className="inline-flex items-center px-6 py-3 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors"
             >
               Read the evidence

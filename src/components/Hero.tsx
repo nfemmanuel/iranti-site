@@ -79,7 +79,7 @@ export default function Hero() {
             Request early access
           </a>
           <Link
-            href="/evidence"
+            href="/benchmarks"
             className="px-5 py-3 bg-[var(--bg-surface)] border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors"
           >
             See the evidence

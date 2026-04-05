@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Integrations - Iranti for Claude Code, Codex, SDKs, and Agent Frameworks",
   description:
     "Iranti integrates with Claude Code, Codex, SDKs, and agent frameworks so teams can share memory and recovery across the tools they already use.",
+  alternates: { canonical: "/integrations" },
   openGraph: {
     title: "Integrations - Iranti for Claude Code, Codex, SDKs, and Agent Frameworks",
     description:
@@ -206,7 +207,7 @@ export default function IntegrationsPage() {
               </p>
             </div>
             <div className="flex gap-3 flex-shrink-0">
-              <Link href="/evidence" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">
+              <Link href="/benchmarks" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">
                 Read the evidence
               </Link>
               <a href="mailto:powerhousexiv@gmail.com" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">

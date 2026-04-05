@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://iranti.dev"),
+  alternates: { canonical: "/" },
   title: "Iranti — Memory Infrastructure for Multi-Agent AI",
   description:
     "Iranti is persistent memory infrastructure for multi-agent AI systems. Identity-based shared memory with conflict resolution. Framework-agnostic. Self-hostable. AGPL-3.0.",
@@ -67,20 +69,39 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        {/* SoftwareApplication structured data */}
+        {/* Structured data — SoftwareApplication + Organization + WebSite */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              name: "Iranti",
-              applicationCategory: "DeveloperApplication",
-              description:
-                "Memory infrastructure for multi-agent AI systems. Persistent, identity-based shared memory with conflict resolution.",
-              url: "https://iranti.dev",
-              license: "https://www.gnu.org/licenses/agpl-3.0.en.html",
-              operatingSystem: "Any",
+              "@graph": [
+                {
+                  "@type": "SoftwareApplication",
+                  name: "Iranti",
+                  applicationCategory: "DeveloperApplication",
+                  description: "Memory infrastructure for multi-agent AI systems. Persistent, identity-based shared memory with conflict resolution.",
+                  url: "https://iranti.dev",
+                  license: "https://www.gnu.org/licenses/agpl-3.0.en.html",
+                  operatingSystem: "Any",
+                  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+                },
+                {
+                  "@type": "Organization",
+                  name: "Iranti",
+                  url: "https://iranti.dev",
+                  description: "Memory infrastructure for multi-agent AI systems.",
+                  sameAs: [
+                    "https://www.npmjs.com/package/iranti",
+                    "https://pypi.org/project/iranti/",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  url: "https://iranti.dev",
+                  name: "Iranti",
+                },
+              ],
             }),
           }}
         />

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Docs - Iranti Guides, Concepts, and Research Links",
   description:
     "Iranti documentation hub: setup guides, integration paths, product concepts, and evidence links for the current benchmark record.",
+  alternates: { canonical: "/docs" },
   openGraph: {
     title: "Docs - Iranti Guides, Concepts, and Research Links",
     description:
@@ -175,7 +176,7 @@ export default function DocsPage() {
               <p className="text-[var(--text-muted)] text-sm max-w-xl">Closed beta is running now. Reach out to request early access and be among the first to run your own workflow on Iranti.</p>
             </div>
             <div className="flex gap-3 flex-shrink-0">
-              <Link href="/evidence" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">Read the evidence</Link>
+              <Link href="/benchmarks" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">Read the evidence</Link>
               <a href="mailto:powerhousexiv@gmail.com" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">Request access</a>
             </div>
           </div>

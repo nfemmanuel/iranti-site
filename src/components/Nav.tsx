@@ -8,7 +8,7 @@ import { IrantiMark } from "./Logo";
 
 const links = [
   { label: "Product", href: "/product" },
-  { label: "Evidence", href: "/evidence" },
+  { label: "Benchmarks", href: "/benchmarks" },
   { label: "Docs", href: "/docs" },
   { label: "Integrations", href: "/integrations" },
 ];

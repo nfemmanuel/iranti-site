@@ -54,7 +54,7 @@ export default function Proof() {
               <p className="text-sm text-[var(--text-muted)] leading-relaxed mb-4">
                 The fuller evidence page is there for evaluators who want methodology, claim boundaries, and research links.
               </p>
-              <Link href="/evidence" className="text-sm font-mono text-amber-500 hover:text-amber-400 transition-colors">
+              <Link href="/benchmarks" className="text-sm font-mono text-amber-500 hover:text-amber-400 transition-colors">
                 Read the evidence
               </Link>
             </div>

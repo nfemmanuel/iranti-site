@@ -10,7 +10,7 @@ export default function Footer() {
               heading: "Product",
               links: [
                 { label: "Why Iranti", href: "/product" },
-                { label: "Evidence", href: "/evidence" },
+                { label: "Evidence", href: "/benchmarks" },
                 { label: "Integrations", href: "/integrations" },
                 { label: "Request access", href: "mailto:powerhousexiv@gmail.com" },
               ],
@@ -25,12 +25,12 @@ export default function Footer() {
               ],
             },
             {
-              heading: "Evidence",
+              heading: "Benchmarks",
               links: [
-                { label: "Evidence overview", href: "/evidence" },
-                { label: "Entity retrieval", href: "/evidence/b1" },
-                { label: "Conflict handling", href: "/evidence/b3" },
-                { label: "Upgrade continuity", href: "/evidence/b7" },
+                { label: "Evidence overview", href: "/benchmarks" },
+                { label: "Entity retrieval", href: "/benchmarks/b1" },
+                { label: "Conflict handling", href: "/benchmarks/b3" },
+                { label: "Upgrade continuity", href: "/benchmarks/b7" },
               ],
             },
             {
