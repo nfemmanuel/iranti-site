@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 import { b3dResults, b3aResults, competitiveSystems } from "@/lib/siteData";
 
 export const metadata: Metadata = {
-  title: "C4: Cross-Session Persistence — Iranti Benchmarks",
+  title: "Cross-Session Agent Memory: Iranti 100% vs Graphiti 57%",
   description:
     "Write 20 facts in process 1. Kill the process. Recall all 40 questions in a fresh subprocess with zero shared Python state. Iranti 100%, Shodh 100%, Mem0 75%, Graphiti 57%. Full methodology.",
   alternates: { canonical: "/benchmarks/cross-session" },
   openGraph: {
-    title: "C4: Cross-Session Persistence — Iranti",
+    title: "Cross-Session Agent Memory — Iranti 100% vs Graphiti 57%",
     description:
       "A true persistence test: fresh subprocess, no shared state. Iranti and Shodh: 100%. Mem0: 75%. Graphiti: 57%. Full subprocess methodology and storage layer breakdown.",
     type: "website",

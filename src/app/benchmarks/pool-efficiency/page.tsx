@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 import { b3bResults, competitiveSystems } from "@/lib/siteData";
 
 export const metadata: Metadata = {
-  title: "C2: Pool Efficiency — Iranti Benchmarks",
+  title: "Memory Token Efficiency: Iranti vs Mem0, Shodh & Graphiti",
   description:
     "All 20 facts in one shared namespace. Iranti scores 5.0 efficiency (100% accuracy, 20 tok/query). Shodh returns 66 tok/query despite 92% accuracy. Full methodology and token breakdown.",
   alternates: { canonical: "/benchmarks/pool-efficiency" },
   openGraph: {
-    title: "C2: Pool Efficiency — Iranti",
+    title: "Memory Token Efficiency — Iranti vs Mem0, Shodh & Graphiti",
     description:
       "Iranti 5.0 · Mem0 4.44 · Shodh 1.39 · Graphiti 1.22. Accuracy matters — but so does injection size. Full pool efficiency benchmark methodology.",
     type: "website",

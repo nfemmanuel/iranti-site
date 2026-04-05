@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 import { b3cResults, competitiveSystems } from "@/lib/siteData";
 
 export const metadata: Metadata = {
-  title: "C3: Conflict Resolution — Iranti Benchmarks",
+  title: "Agent Memory Conflict Resolution: Iranti vs Mem0 & Graphiti",
   description:
     "Write v1 then v2 for 10 fact pairs. Query each. Correct = v2 (latest). Iranti 100% clean v2. Shodh 100% but returns both. Mem0 80%. Graphiti 40%. Full methodology and per-verdict breakdown.",
   alternates: { canonical: "/benchmarks/conflict-resolution" },
   openGraph: {
-    title: "C3: Conflict Resolution — Iranti",
+    title: "Agent Memory Conflict Resolution — Iranti vs Mem0 & Graphiti",
     description:
       "Iranti deterministically replaces v1 with v2. Shodh accumulates both. Mem0 80%. Graphiti 40%. Full conflict resolution methodology across four memory systems.",
     type: "website",

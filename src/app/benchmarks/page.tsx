@@ -10,12 +10,12 @@ import {
 } from "@/lib/siteData";
 
 export const metadata: Metadata = {
-  title: "Benchmarks — Iranti",
+  title: "Agent Memory Benchmarks: Iranti vs Mem0, Shodh & Graphiti",
   description:
-    "Iranti's full benchmark suite: competitive recall accuracy vs Shodh, Mem0, and Graphiti; pool efficiency; conflict resolution; cross-session persistence. Every claim has a script behind it.",
+    "Iranti vs Mem0, Shodh, and Graphiti: head-to-head agent memory benchmarks on recall accuracy, token efficiency, conflict resolution, and cross-session persistence. Every number has a methodology.",
   alternates: { canonical: "/benchmarks" },
   openGraph: {
-    title: "Benchmarks — Iranti",
+    title: "Agent Memory Benchmarks: Iranti vs Mem0, Shodh & Graphiti",
     description:
       "Competitive recall, pool efficiency, conflict resolution, cross-session persistence. Every number has a methodology behind it — including where we fall short.",
     type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benchmarks — Iranti",
+    title: "Agent Memory Benchmarks: Iranti vs Mem0, Shodh & Graphiti",
     description:
       "Iranti vs Shodh, Mem0, and Graphiti across recall, efficiency, conflict resolution, and persistence. Full methodology and weakness disclosure.",
   },
@@ -57,14 +57,71 @@ function StatBar({ pct, color }: { pct: number; color: string }) {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Dataset",
-  name: "Iranti Benchmark Suite v0.3.10",
-  description:
-    "Competitive memory benchmark suite: recall accuracy, pool efficiency, conflict resolution, and cross-session persistence across Iranti, Shodh, Mem0, and Graphiti.",
-  url: "https://iranti.dev/benchmarks",
-  creator: { "@type": "Organization", name: "Iranti", url: "https://iranti.dev" },
-  datePublished: "2026-04-05",
-  measurementTechnique: "Automated script-based evaluation with deterministic substring scoring",
+  "@graph": [
+    {
+      "@type": "Dataset",
+      name: "Iranti Benchmark Suite v0.3.10",
+      description:
+        "Competitive memory benchmark suite: recall accuracy, pool efficiency, conflict resolution, and cross-session persistence across Iranti, Shodh, Mem0, and Graphiti.",
+      url: "https://iranti.dev/benchmarks",
+      creator: { "@type": "Organization", name: "Iranti", url: "https://iranti.dev" },
+      datePublished: "2026-04-05",
+      measurementTechnique: "Automated script-based evaluation with deterministic substring scoring",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How does Iranti compare to Mem0 on recall accuracy?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In the C1 competitive recall benchmark (20 config-heavy facts, 40 questions, isolated namespaces), Iranti scores 100% (40/40) and Mem0 scores 80% (32/40). Iranti misses zero questions; Mem0 misses 8, concentrated in HIGH-risk tiers (rate limits, auth middleware, webhook signatures).",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Iranti replace old facts when updated, or accumulate them?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Iranti replaces. In the C3 conflict resolution benchmark (10 fact pairs, v1 then v2 written, queried once), Iranti returns v2-only on 9/10 pairs. The remaining pair returns both values due to a specific phrasing overlap. Shodh scores 100% but accumulates both versions — returning both v1 and v2 and leaving disambiguation to the caller.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Iranti maintain memory across process restarts?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. The C4 cross-session benchmark writes 20 facts in process 1, kills it, then recalls all 40 questions in a fresh subprocess with zero shared Python state. Iranti scores 100%. Graphiti scores 57% in this test.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does Iranti compare to Mem0 and Shodh on token injection efficiency?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In the C2 pool efficiency benchmark (all 20 facts in one shared namespace), Iranti scores 5.0 efficiency (100% accuracy ÷ 20 avg tokens per query). Mem0 scores 4.44. Shodh scores 1.39 despite 92% accuracy because it returns 66 tokens per query — injecting far more context than needed.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is Iranti open source?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Iranti is licensed under AGPL-3.0. It is self-hostable and available as both an npm package and a Python package on PyPI. The CLI is `iranti` and the MCP server exposes memory tools directly to compatible agents.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Iranti work with Claude Code and OpenAI Codex?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Iranti integrates with Claude Code via MCP hooks — the iranti_attend, iranti_write, iranti_handshake, and iranti_checkpoint tools are available to any MCP-compatible agent host. Claude Code is the primary tested host; Codex and other MCP-supporting agents can connect via the same server.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────

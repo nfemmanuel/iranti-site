@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 import { b3aResults, competitiveSystems } from "@/lib/siteData";
 
 export const metadata: Metadata = {
-  title: "C1: Competitive Recall Accuracy — Iranti Benchmarks",
+  title: "Agent Memory Recall: Iranti vs Mem0, Shodh & Graphiti",
   description:
     "Iranti vs Shodh, Mem0, and Graphiti on recall accuracy: 20 config-heavy facts, 40 questions, isolated namespaces. Full methodology, per-tier breakdown, and Graphiti entity extraction analysis.",
   alternates: { canonical: "/benchmarks/competitive-recall" },
   openGraph: {
-    title: "C1: Competitive Recall Accuracy — Iranti",
+    title: "Agent Memory Recall — Iranti vs Mem0, Shodh & Graphiti",
     description:
       "Iranti 100% · Shodh 100% · Mem0 80% · Graphiti 57%. Full methodology for a 20-fact, 40-question recall benchmark across four memory systems.",
     type: "website",
