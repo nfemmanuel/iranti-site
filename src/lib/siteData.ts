@@ -143,7 +143,7 @@ export const competitiveOverview = [
   },
 ]
 
-// ─── Internal benchmarks (B1–B13) ─────────────────────────────────────────────
+// ─── Internal benchmarks (B1–B14) ─────────────────────────────────────────────
 
 export const benchmarkHighlights = [
   {
@@ -281,6 +281,14 @@ export const allBenchmarks = [
     statusLabel: 'PASS',
     detail: '4/5 facts preserved across versions, 3/3 post-upgrade writes, conflict state intact, API surface stable.',
   },
+  {
+    id: 'B14',
+    href: '/benchmarks/b14',
+    label: 'Context economy',
+    status: 'pass' as const,
+    statusLabel: 'PASS',
+    detail: '37% fewer input tokens at turn 15 vs. a baseline agent that re-reads files on recall. Measured via Anthropic countTokens API (exact, not estimated) over a 15-turn DebugAuth session.',
+  },
 ]
 
 // ─── Weaknesses (honest disclosure) ───────────────────────────────────────────
@@ -374,7 +382,7 @@ export const researchLinks = [
   {
     title: 'Benchmarks overview',
     href: '/benchmarks',
-    description: 'Full competitive suite results (C1–C4) plus internal benchmarks B1–B13. Includes honest weakness disclosure. Starting point for serious evaluation.',
+    description: 'Full competitive suite results (C1–C4) plus internal benchmarks B1–B14. Includes honest weakness disclosure. Starting point for serious evaluation.',
   },
   {
     title: 'C1 — Competitive recall accuracy',
