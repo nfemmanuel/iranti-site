@@ -60,12 +60,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Dataset",
-      name: "Iranti Benchmark Suite v0.3.10",
+      name: "Iranti Benchmark Suite v0.3.11",
       description:
-        "Competitive memory benchmark suite: recall accuracy, pool efficiency, conflict resolution, and cross-session persistence across Iranti, Shodh, Mem0, and Graphiti.",
+        "Competitive memory benchmark suite: recall accuracy, pool efficiency, conflict resolution, cross-session persistence, and context economy across Iranti, Shodh, Mem0, and Graphiti.",
       url: "https://iranti.dev/benchmarks",
       creator: { "@type": "Organization", name: "Iranti", url: "https://iranti.dev" },
-      datePublished: "2026-04-05",
+      datePublished: "2026-04-06",
       measurementTechnique: "Automated script-based evaluation with deterministic substring scoring",
     },
     {
@@ -117,6 +117,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes. Iranti integrates with Claude Code via MCP hooks — the iranti_attend, iranti_write, iranti_handshake, and iranti_checkpoint tools are available to any MCP-compatible agent host. Claude Code is the primary tested host; Codex and other MCP-supporting agents can connect via the same server.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does using Iranti increase or decrease token usage over time?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Decrease — significantly over multi-turn sessions. The B14 context economy benchmark measures cumulative input tokens across a 15-turn coding session with and without Iranti. By turn 15, the Iranti-enabled agent uses 37% fewer tokens (5,677 vs. 8,949) because compact inject blocks replace full file re-reads. Token counts are exact, measured via the Anthropic countTokens API. Context window usage: 2.8% with Iranti vs. 4.5% without.",
           },
         },
       ],
