@@ -29,5 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/benchmarks/b12`, lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/benchmarks/b13`, lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/benchmarks/b14`, lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
+    // Blog
+    { url: `${base}/blog`,                          lastModified: new Date("2026-04-06"), changeFrequency: "weekly",  priority: 0.8 },
+    { url: `${base}/blog/context-economy`,          lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
   ];
 }
