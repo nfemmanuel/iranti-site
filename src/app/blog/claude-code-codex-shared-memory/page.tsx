@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "How to Share Context Between Claude Code and Codex (Without Re-Briefing) — Iranti",
@@ -321,6 +322,12 @@ export default function ClaudeCodeCodexSharedMemoryPost() {
               </p>
             </div>
 
+          </div>
+        </section>
+
+        <section className="px-6 pb-16">
+          <div className="max-w-3xl mx-auto">
+            <Comments slug="claude-code-codex-shared-memory" />
           </div>
         </section>
       </main>

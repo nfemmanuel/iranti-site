@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Iranti: A Persistent Memory MCP Server for AI Agents",
@@ -214,6 +215,12 @@ export default function McpMemoryServerPost() {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        <section className="px-6 pb-16">
+          <div className="max-w-3xl mx-auto">
+            <Comments slug="mcp-memory-server" />
           </div>
         </section>
       </main>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Iranti vs Mem0: What the Benchmarks Actually Show",
@@ -223,6 +224,12 @@ export default function Mem0AlternativePost() {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        <section className="px-6 pb-16">
+          <div className="max-w-3xl mx-auto">
+            <Comments slug="mem0-alternative" />
           </div>
         </section>
       </main>

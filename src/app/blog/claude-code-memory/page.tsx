@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Comments from "@/components/Comments";
 
 export const metadata: Metadata = {
   title: "Persistent Memory for Claude Code Agents — Iranti",
@@ -214,6 +215,12 @@ export default function ClaudeCodeMemoryPost() {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        <section className="px-6 pb-16">
+          <div className="max-w-3xl mx-auto">
+            <Comments slug="claude-code-memory" />
           </div>
         </section>
       </main>

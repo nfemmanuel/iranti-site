@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Comments from "@/components/Comments";
 
 export default function ContextEconomyPost() {
   return (
@@ -210,6 +211,12 @@ export default function ContextEconomyPost() {
               </Link>
             </div>
 
+          </div>
+        </section>
+
+        <section className="px-6 pb-16">
+          <div className="max-w-3xl mx-auto">
+            <Comments slug="context-economy" />
           </div>
         </section>
       </main>
