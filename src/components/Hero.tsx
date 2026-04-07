@@ -71,7 +71,7 @@ export default function Hero() {
           and operator visibility when the happy path breaks.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
           <Link
             href="/docs"
             className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
@@ -84,6 +84,14 @@ export default function Hero() {
           >
             See the evidence
           </Link>
+        </div>
+
+        <div className="flex flex-col items-center gap-1.5 mb-12">
+          <div className="flex items-center gap-3 px-4 py-2.5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-lg font-mono text-sm text-teal-400">
+            <span className="text-[var(--text-faint)] select-none">$</span>
+            <span>npm install -g iranti</span>
+          </div>
+          <p className="text-xs text-[var(--text-faint)]">Requires Node.js + Postgres with pgvector</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
