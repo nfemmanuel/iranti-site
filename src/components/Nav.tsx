@@ -64,12 +64,12 @@ export default function Nav() {
 
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
-          <a
-            href="mailto:powerhousexiv@gmail.com"
+          <Link
+            href="/docs"
             className="px-4 py-1.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded transition-colors"
           >
-            Request access
-          </a>
+            Get started
+          </Link>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
@@ -112,12 +112,13 @@ export default function Nav() {
             </Link>
           ))}
           <div className="pt-3 border-t border-[var(--border-subtle)] flex flex-col gap-2">
-            <a
-              href="mailto:powerhousexiv@gmail.com"
+            <Link
+              href="/docs"
               className="w-full text-center px-4 py-2 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded transition-colors"
+              onClick={() => setOpen(false)}
             >
-              Request access
-            </a>
+              Get started
+            </Link>
           </div>
         </div>
       )}
