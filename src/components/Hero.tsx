@@ -68,16 +68,16 @@ export default function Hero() {
         </p>
         <p className="text-base text-[var(--text-muted)] max-w-2xl mx-auto mb-10">
           Built for serious multi-agent workflows: exact retrieval first, deliberate handoffs, bounded recovery,
-          and operator visibility when the happy path breaks. Open beta coming soon.
+          and operator visibility when the happy path breaks.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a
-            href="mailto:powerhousexiv@gmail.com"
+          <Link
+            href="/docs"
             className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
           >
-            Request early access
-          </a>
+            Get started →
+          </Link>
           <Link
             href="/benchmarks"
             className="px-5 py-3 bg-[var(--bg-surface)] border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors"
