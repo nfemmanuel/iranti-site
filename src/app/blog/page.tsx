@@ -4,6 +4,30 @@ import Footer from "@/components/Footer";
 
 const POSTS = [
   {
+    slug: "mcp-memory-server",
+    date: "2026-04-07",
+    title: "Iranti: a persistent memory MCP server for AI agents",
+    summary:
+      "Iranti ships a stdio MCP server that any MCP-compatible client can connect to. Connect Claude Code, GitHub Copilot, Codex, or your own agent and get structured, persistent, cross-session memory with exact retrieval, conflict handling, and operator visibility.",
+    tags: ["MCP", "memory", "infrastructure"],
+  },
+  {
+    slug: "mem0-alternative",
+    date: "2026-04-07",
+    title: "Iranti vs Mem0: what the benchmarks actually show",
+    summary:
+      "A direct comparison across four benchmarks: recall accuracy, pool efficiency, conflict resolution, and cross-session persistence. Where each system wins and where the architectural tradeoffs land.",
+    tags: ["comparison", "benchmarks", "Mem0"],
+  },
+  {
+    slug: "claude-code-memory",
+    date: "2026-04-07",
+    title: "How to give Claude Code persistent memory across sessions",
+    summary:
+      "Claude Code starts every session with no memory of previous work. Iranti adds a persistent MCP memory layer in one command. How it works, what it stores, and what changes in practice.",
+    tags: ["Claude Code", "MCP", "setup"],
+  },
+  {
     slug: "research-workflows",
     date: "2026-04-07",
     title: "Your AI research assistant shouldn't lose its memory every session",
