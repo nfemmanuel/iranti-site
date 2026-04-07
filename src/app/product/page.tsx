@@ -164,6 +164,37 @@ export default function ProductPage() {
           </div>
         </section>
 
+        {/* Who reaches for Iranti */}
+        <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-6 h-px bg-teal-500" />
+              <span className="text-xs text-teal-500 font-mono uppercase tracking-wider">Who reaches for it</span>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div className="p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl">
+                <div className="text-sm font-semibold text-[var(--text-code)] mb-2">Developers building multi-agent systems</div>
+                <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                  Teams that need agents to share structured facts, hand off state across tools, and survive context window limits without each agent reinventing memory for itself.
+                </p>
+              </div>
+              <div className="p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl">
+                <div className="text-sm font-semibold text-[var(--text-code)] mb-2">Researchers using AI on long projects</div>
+                <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                  Researchers running literature reviews, experiments, or long-form writing with AI agents — where accumulated context (papers read, hypotheses explored, decisions made) shouldn&apos;t disappear each session.
+                  <Link href="/blog/research-workflows" className="ml-1 text-teal-500 hover:text-teal-400 transition-colors text-xs">Read more →</Link>
+                </p>
+              </div>
+              <div className="p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl">
+                <div className="text-sm font-semibold text-[var(--text-code)] mb-2">Teams building AI-powered products</div>
+                <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                  Product builders who need a shared memory layer that multiple agents, tools, and team members can write to and read from — with provenance, conflict handling, and operator visibility included.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="px-6 py-16 border-t border-[var(--border-subtle)]">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
             <div>

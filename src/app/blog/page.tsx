@@ -4,6 +4,14 @@ import Footer from "@/components/Footer";
 
 const POSTS = [
   {
+    slug: "research-workflows",
+    date: "2026-04-07",
+    title: "Your AI research assistant shouldn't lose its memory every session",
+    summary:
+      "Three research workflows where persistent agent memory eliminates the most frustrating part of working with AI: literature review that builds across sessions, hypothesis tracking that survives experiment cycles, and manuscript writing with real continuity.",
+    tags: ["research", "use cases", "workflows"],
+  },
+  {
     slug: "context-economy",
     date: "2026-04-06",
     title: "Why Iranti uses 37% fewer tokens in long coding sessions",
