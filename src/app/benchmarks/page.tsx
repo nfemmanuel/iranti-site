@@ -467,10 +467,12 @@ export default function BenchmarksPage() {
                 Product story
               </Link>
               <a
-                href="mailto:powerhousexiv@gmail.com"
+                href="https://github.com/nfemmanuel/iranti#readme"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
               >
-                Request access
+                Install guide →
               </a>
             </div>
           </div>

@@ -203,15 +203,15 @@ export default function IntegrationsPage() {
                 Ready to choose a path?
               </h2>
               <p className="text-[var(--text-muted)] text-sm max-w-xl">
-                Closed beta is running now — reach out to request early access, or read the evidence page first if you want the proof before anything else.
+                Open source and free to self-host. Run <code className="text-xs text-teal-400 bg-[var(--bg-surface)] px-1.5 py-0.5 rounded">npm install -g iranti</code> to get started, or read the evidence page first.
               </p>
             </div>
             <div className="flex gap-3 flex-shrink-0">
               <Link href="/benchmarks" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">
                 Read the evidence
               </Link>
-              <a href="mailto:powerhousexiv@gmail.com" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">
-                Request access
+              <a href="https://github.com/nfemmanuel/iranti#readme" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">
+                Install guide →
               </a>
             </div>
           </div>

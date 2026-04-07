@@ -12,7 +12,7 @@ export default function Footer() {
                 { label: "Why Iranti", href: "/product" },
                 { label: "Evidence", href: "/benchmarks" },
                 { label: "Integrations", href: "/integrations" },
-                { label: "Request access", href: "mailto:powerhousexiv@gmail.com" },
+                { label: "Install guide", href: "https://github.com/nfemmanuel/iranti#readme" },
               ],
             },
             {
