@@ -4,6 +4,14 @@ import Footer from "@/components/Footer";
 
 const POSTS = [
   {
+    slug: "github-copilot-memory",
+    date: "2026-04-07",
+    title: "GitHub Copilot CLI now supports Iranti shared memory",
+    summary:
+      "As of v0.3.17, iranti copilot-setup wires GitHub Copilot CLI into the same shared project memory as Claude Code and Codex. How the integration works, what's different about Copilot's hook system, and what it means when all three tools share one memory store.",
+    tags: ["Copilot", "cross-tool", "v0.3.17"],
+  },
+  {
     slug: "claude-code-codex-shared-memory",
     date: "2026-04-07",
     title: "How to share context between Claude Code and Codex (without re-briefing)",
