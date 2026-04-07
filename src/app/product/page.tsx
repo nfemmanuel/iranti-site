@@ -6,14 +6,14 @@ import ProductStaffCards from "@/components/ProductStaffCards";
 import ProductCapabilityCards from "@/components/ProductCapabilityCards";
 
 export const metadata: Metadata = {
-  title: "Product - Iranti Shared Memory and Recovery Infrastructure",
+  title: "How Iranti Works — Cross-Tool Memory and Session Recovery for AI Coding",
   description:
-    "Iranti is shared memory and recovery infrastructure for multi-agent workflows: exact retrieval, durable facts, cross-tool handoff, bounded recovery, and operator visibility.",
+    "Iranti keeps Claude Code, Codex, and Cursor in sync. One shared project memory across all your AI coding tools. Structured session recovery. Inspect and correct exactly what your AI knows.",
   alternates: { canonical: "/product" },
   openGraph: {
-    title: "Product - Iranti Shared Memory and Recovery Infrastructure",
+    title: "Stop re-briefing your AI tools. Iranti keeps them in sync.",
     description:
-      "Shared memory and recovery infrastructure for workflows that need durable facts, bounded recovery, conflict management, and operator control.",
+      "One shared memory across Claude Code, Codex, and Cursor. Session recovery when things crash. Full operator visibility into what your AI tools believe about your project.",
     type: "website",
     url: "https://iranti.dev/product",
     siteName: "Iranti",

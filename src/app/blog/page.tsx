@@ -4,6 +4,14 @@ import Footer from "@/components/Footer";
 
 const POSTS = [
   {
+    slug: "claude-code-codex-shared-memory",
+    date: "2026-04-07",
+    title: "How to share context between Claude Code and Codex (without re-briefing)",
+    summary:
+      "Every time you switch from Claude Code to Codex, it starts blank. Here's the problem, the current workarounds developers are using, and the one setup that actually solves it.",
+    tags: ["Claude Code", "Codex", "cross-tool"],
+  },
+  {
     slug: "mcp-memory-server",
     date: "2026-04-07",
     title: "Iranti: a persistent memory MCP server for AI agents",

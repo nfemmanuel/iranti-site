@@ -83,7 +83,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
             <span>v{CURRENT_VERSION}</span>
             <span>AGPL-3.0</span>
-            <span>Evidence-first positioning. Narrow claims.</span>
+            <span className="italic">Iranti means &ldquo;memory&rdquo; in Yoruba.</span>
           </div>
         </div>
       </div>

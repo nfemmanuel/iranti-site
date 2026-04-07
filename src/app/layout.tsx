@@ -4,24 +4,27 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://iranti.dev"),
   alternates: { canonical: "/" },
-  title: "Iranti — Memory Infrastructure for Multi-Agent AI",
+  title: "Iranti — Shared Memory for Claude Code and Codex",
   description:
-    "Iranti is persistent memory infrastructure for multi-agent AI systems. Identity-based shared memory with conflict resolution. Framework-agnostic. Self-hostable. AGPL-3.0.",
+    "Iranti gives Claude Code and Codex a shared memory. Switch tools without losing context. Session recovery, cross-tool handoff, inspectable project memory. Self-hostable. Free.",
   keywords: [
-    "multi-agent AI memory",
-    "LLM memory infrastructure",
-    "persistent agent memory",
-    "AI memory infrastructure",
-    "multi-agent systems",
-    "agent memory",
-    "shared agent memory",
+    "claude code memory",
+    "codex memory",
+    "shared memory claude code codex",
+    "claude code persistent memory",
+    "switch claude to codex context",
+    "AI coding session memory",
+    "cross tool AI memory",
+    "claude code session recovery",
     "MCP memory server",
-    "knowledge base for agents",
+    "persistent memory AI coding",
+    "AI coding context loss",
+    "multi agent coding memory",
   ],
   openGraph: {
-    title: "Iranti — Memory Infrastructure for Multi-Agent AI",
+    title: "Iranti — Claude Code and Codex finally share a brain",
     description:
-      "Persistent, identity-based shared memory for multi-agent AI systems. Conflict-aware. Framework-agnostic. Not an agent framework — infrastructure.",
+      "Switch between Claude Code and Codex without re-briefing. Iranti is shared project memory that works across tools, survives session crashes, and stays inspectable. Free to self-host.",
     type: "website",
     url: "https://iranti.dev",
     siteName: "Iranti",
@@ -29,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Iranti — Memory Infrastructure for Multi-Agent AI",
+    title: "Iranti — Claude Code and Codex finally share a brain",
     description:
-      "Persistent, identity-based shared memory for multi-agent AI systems. Conflict-aware. Framework-agnostic. Not an agent framework — infrastructure.",
+      "Switch between Claude Code and Codex without re-briefing. Iranti is shared project memory that works across tools, survives session crashes, and stays inspectable. Free to self-host.",
     images: ["https://iranti.dev/og"],
   },
 };
