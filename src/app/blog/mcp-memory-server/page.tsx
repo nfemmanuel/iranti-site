@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Iranti is a persistent memory MCP server. Connect any MCP client, write structured facts, and retrieve them deterministically — across sessions, processes, and tools.",
     type: "article",
-    url: "https://iranti.site/blog/mcp-memory-server",
+    url: "https://iranti.dev/blog/mcp-memory-server",
     siteName: "Iranti",
   },
   twitter: {

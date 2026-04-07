@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Four benchmarks, two memory systems. Recall accuracy, pool efficiency, conflict resolution, cross-session persistence. Where Iranti and Mem0 differ — and why it matters.",
     type: "article",
-    url: "https://iranti.site/blog/mem0-alternative",
+    url: "https://iranti.dev/blog/mem0-alternative",
     siteName: "Iranti",
   },
   twitter: {

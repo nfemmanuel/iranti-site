@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Claude Code starts every session blank. Iranti gives it persistent memory across sessions in one command — iranti claude-setup.",
     type: "article",
-    url: "https://iranti.site/blog/claude-code-memory",
+    url: "https://iranti.dev/blog/claude-code-memory",
     siteName: "Iranti",
   },
   twitter: {

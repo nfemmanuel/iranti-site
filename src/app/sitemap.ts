@@ -30,7 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/benchmarks/b13`, lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/benchmarks/b14`, lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
     // Blog
-    { url: `${base}/blog`,                          lastModified: new Date("2026-04-06"), changeFrequency: "weekly",  priority: 0.8 },
-    { url: `${base}/blog/context-economy`,          lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog`,                                    lastModified: new Date("2026-04-07"), changeFrequency: "weekly",  priority: 0.8 },
+    { url: `${base}/blog/claude-code-codex-shared-memory`,    lastModified: new Date("2026-04-07"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/mcp-memory-server`,                  lastModified: new Date("2026-04-07"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/mem0-alternative`,                   lastModified: new Date("2026-04-07"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/claude-code-memory`,                 lastModified: new Date("2026-04-07"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/research-workflows`,                 lastModified: new Date("2026-04-07"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/context-economy`,                    lastModified: new Date("2026-04-06"), changeFrequency: "monthly", priority: 0.7 },
   ];
 }

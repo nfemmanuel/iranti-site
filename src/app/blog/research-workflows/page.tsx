@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Three research use cases where persistent agent memory changes the workflow: literature review, hypothesis tracking, and long-form manuscript writing.",
     type: "article",
-    url: "https://iranti.site/blog/research-workflows",
+    url: "https://iranti.dev/blog/research-workflows",
     siteName: "Iranti",
   },
   twitter: {
