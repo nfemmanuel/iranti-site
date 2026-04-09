@@ -98,7 +98,7 @@ export default function Hero() {
           <div className="p-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
             <div className="text-2xl font-mono text-teal-400 mb-1">1</div>
             <div className="text-sm text-[var(--text-code)] mb-1">One memory layer across tools</div>
-            <div className="text-xs text-[var(--text-muted)]">Claude Code, Codex, Cursor, Copilot, and any MCP or HTTP client can all point at the same shared state.</div>
+            <div className="text-xs text-[var(--text-muted)]">Claude Code, Codex, Copilot, and any MCP or HTTP client can all point at the same shared state.</div>
           </div>
           <div className="p-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
             <div className="text-2xl font-mono text-teal-400 mb-1">20/20</div>

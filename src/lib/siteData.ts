@@ -1,9 +1,9 @@
-export const CURRENT_VERSION = '0.3.11'
+export const CURRENT_VERSION = '0.3.20'
 
 // ─── System colors for competitive charts ────────────────────────────────────
 
 export const competitiveSystems = [
-  { id: 'iranti',   label: 'Iranti',   color: '#14b8a6', bg: 'bg-teal-500',   version: 'v0.3.11' },
+  { id: 'iranti',   label: 'Iranti',   color: '#14b8a6', bg: 'bg-teal-500',   version: 'v0.3.20' },
   { id: 'shodh',    label: 'Shodh',    color: '#60a5fa', bg: 'bg-blue-400',   version: 'v0.1.91' },
   { id: 'mem0',     label: 'Mem0',     color: '#f59e0b', bg: 'bg-amber-500',  version: 'v1.0.x'  },
   { id: 'graphiti', label: 'Graphiti', color: '#a78bfa', bg: 'bg-violet-400', version: 'v0.28.2' },

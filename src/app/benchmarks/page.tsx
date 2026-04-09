@@ -60,7 +60,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Dataset",
-      name: "Iranti Benchmark Suite v0.3.11",
+      name: "Iranti Benchmark Suite v0.3.20",
       description:
         "Competitive memory benchmark suite: recall accuracy, pool efficiency, conflict resolution, cross-session persistence, and context economy across Iranti, Shodh, Mem0, and Graphiti.",
       url: "https://iranti.dev/benchmarks",

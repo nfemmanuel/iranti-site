@@ -14,6 +14,13 @@ const integrations = [
     tier: "native",
   },
   {
+    name: "GitHub Copilot",
+    type: "MCP + hooks",
+    desc: "Writes MCP config and per-turn protocol instructions so Copilot CLI shares the same memory layer as Claude Code and Codex.",
+    cmd: "iranti copilot-setup",
+    tier: "native",
+  },
+  {
     name: "SDK / HTTP",
     type: "Any agent stack",
     desc: "The durable path for teams that want memory to outlive one IDE, one framework, or one generation of agent tooling.",
@@ -73,7 +80,7 @@ export default function Integrations() {
             </h2>
             <p className="text-[var(--text-secondary)] max-w-2xl leading-relaxed">
               The selling point is not a flashy plugin. It is one shared memory and recovery layer
-              across Claude Code, Codex, SDK clients, HTTP callers, and operator tooling.
+              across Claude Code, Codex, GitHub Copilot, SDK clients, HTTP callers, and operator tooling.
             </p>
           </div>
         </div>
