@@ -4,6 +4,14 @@ import Footer from "@/components/Footer";
 
 const POSTS = [
   {
+    slug: "6k-downloads",
+    date: "2026-04-09",
+    title: "6,000 downloads in three weeks: what we learned building agent memory infrastructure",
+    summary:
+      "Three weeks after publishing to npm, Iranti had 6,000 downloads with no Product Hunt launch. The adoption pattern -- who installed it, how they were already using agents, which failure modes they were hitting -- tells us more about the current state of multi-agent tooling than the number does.",
+    tags: ["milestone", "agent memory", "infrastructure"],
+  },
+  {
     slug: "github-copilot-memory",
     date: "2026-04-07",
     title: "GitHub Copilot CLI now supports Iranti shared memory",
