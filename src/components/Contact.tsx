@@ -27,7 +27,7 @@ export default function Contact() {
               href="https://github.com/nfemmanuel/iranti#readme"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:opacity-90 text-[#080808] text-[13px] font-medium rounded-full transition-opacity"
             >
               Install guide →
             </a>

@@ -207,10 +207,10 @@ export default function IntegrationsPage() {
               </p>
             </div>
             <div className="flex gap-3 flex-shrink-0">
-              <Link href="/benchmarks" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors">
+              <Link href="/benchmarks" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-[13px] rounded-full transition-colors">
                 Read the evidence
               </Link>
-              <a href="https://github.com/nfemmanuel/iranti#readme" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors">
+              <a href="https://github.com/nfemmanuel/iranti#readme" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-amber-500 hover:opacity-90 text-[#080808] text-[13px] font-medium rounded-full transition-opacity">
                 Install guide →
               </a>
             </div>

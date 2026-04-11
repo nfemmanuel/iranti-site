@@ -71,16 +71,16 @@ export default function Hero() {
           and operator visibility when the happy path breaks.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
           <Link
             href="/docs"
-            className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-[#080808] text-sm font-medium rounded-lg transition-colors"
+            className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-[13px] font-medium rounded-full transition-opacity hover:opacity-90"
           >
             Get started →
           </Link>
           <Link
             href="/benchmarks"
-            className="px-5 py-3 bg-[var(--bg-surface)] border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-sm rounded-lg transition-colors"
+            className="px-5 py-2.5 bg-[var(--bg-surface)] border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-[13px] rounded-full transition-colors"
           >
             See the evidence
           </Link>
