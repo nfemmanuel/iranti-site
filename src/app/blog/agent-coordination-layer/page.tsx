@@ -463,7 +463,7 @@ export default function AgentCoordinationLayerPost() {
             {/* What this means in practice */}
             <div>
               <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
-                What this means in practice
+                What does this mean for you
               </h2>
               <p className="mb-4">
                 The five problems above are not edge cases. They show up in any workflow where more
