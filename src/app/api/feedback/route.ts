@@ -1,5 +1,6 @@
 import { sql } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
 const MAX_BODY_LENGTH = 5000;
 
@@ -44,6 +45,26 @@ export async function POST(req: NextRequest) {
     VALUES (${text.trim()}, ${cleanName}, ${cleanEmail})
     RETURNING id, created_at
   `;
+
+  // Fire-and-forget email notification — never block the response on this
+  if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    resend.emails.send({
+      from: "feedback@iranti.dev",
+      to: process.env.NOTIFICATION_EMAIL,
+      subject: "New Iranti feedback",
+      text: [
+        cleanName ? `From: ${cleanName}` : "From: anonymous",
+        cleanEmail ? `Email: ${cleanEmail}` : null,
+        "",
+        text.trim(),
+      ]
+        .filter((line) => line !== null)
+        .join("\n"),
+    }).catch(() => {
+      // Silently ignore email failures — feedback is already saved to DB
+    });
+  }
 
   return NextResponse.json({ ok: true, id: rows[0].id }, { status: 201 });
 }
