@@ -126,24 +126,23 @@ pre, code {
   animation: amber-glow 2s ease-in-out infinite;
 }
 
-/* SVG path tracing — used on GridBackground */
+/* SVG path worm — used on GridBackground.
+   stroke-dasharray: segmentLen gap creates a short visible worm.
+   Animating dashoffset from 0 to -(segmentLen+gap) = one full pattern
+   repeat, so the loop is seamless — no stop, no flash reset. */
 @keyframes trace-amber {
-  0%   { stroke-dashoffset: 1440; }
-  70%  { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 0; }
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -4224; }
 }
 @keyframes trace-teal {
-  0%   { stroke-dashoffset: 1200; }
-  70%  { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 0; }
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -3408; }
 }
 .trace-amber {
-  stroke-dasharray: 1440;
-  stroke-dashoffset: 1440;
-  animation: trace-amber 20s ease-in infinite;
+  stroke-dasharray: 320 3904;
+  animation: trace-amber 20s linear infinite;
 }
 .trace-teal {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: trace-teal 24s ease-in 6s infinite backwards;
+  stroke-dasharray: 260 3148;
+  animation: trace-teal 18s linear 5s infinite;
 }
