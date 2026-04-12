@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Comments from "@/components/Comments";
@@ -119,10 +120,10 @@ export default function AgentCoordinationLayerPost() {
     <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
       <Nav />
 
-      <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      </head>
+      <Script id="ld-article" type="application/ld+json" strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Script id="ld-faq" type="application/ld+json" strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <main>
         {/* Header */}
