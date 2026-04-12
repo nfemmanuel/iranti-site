@@ -270,12 +270,13 @@ export default function AgentCoordinationLayerPost() {
 
               <div className="p-4 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl my-6">
                 <p className="text-sm text-[var(--text-secondary)] italic mb-2">
-                  &ldquo;The number one thing developers lose in multi-session AI work is the context
-                  that built up over previous sessions. Re-establishing it manually is the biggest
-                  hidden tax on AI-assisted development.&rdquo;
+                  &ldquo;The core challenge of long-running agents is that they must work in discrete
+                  sessions, and each new session begins with no memory of what came before. Imagine a
+                  software project staffed by engineers working in shifts, where each new engineer
+                  arrives with no memory of what happened on the previous shift.&rdquo;
                 </p>
                 <p className="text-xs text-[var(--text-faint)]">
-                  — add a sourced expert quote here from an AI researcher or engineering leader
+                  — Justin Young, Anthropic Engineering Blog, &ldquo;Effective Harnesses for Long-Running Agents&rdquo; (Nov 2025)
                 </p>
               </div>
 
@@ -372,10 +373,12 @@ export default function AgentCoordinationLayerPost() {
 
               <div className="p-4 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-xl my-6">
                 <p className="text-sm text-[var(--text-secondary)] italic mb-2">
-                  &ldquo;add a sourced quote here about the challenges of multi-agent consistency,
-                  from a researcher working on agent coordination or distributed AI systems.&rdquo;
+                  &ldquo;Agents don&apos;t fail because they can&apos;t reason. They fail because they
+                  operate on inconsistent views of shared state.&rdquo;
                 </p>
-                <p className="text-xs text-[var(--text-faint)]">— suggested source: AI systems researcher or engineering lead</p>
+                <p className="text-xs text-[var(--text-faint)]">
+                  — Mikiko Bazeley, O&apos;Reilly Radar, &ldquo;Why Multi-Agent Systems Need Memory Engineering&rdquo; (Feb 2026)
+                </p>
               </div>
 
               <p>
