@@ -405,7 +405,7 @@ function TurnTable() {
 
 export default function B14Page() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
 
       <main>

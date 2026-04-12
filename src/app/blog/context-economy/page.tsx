@@ -5,7 +5,7 @@ import Comments from "@/components/Comments";
 
 export default function ContextEconomyPost() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
 
       <main>

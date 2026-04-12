@@ -1,8 +1,6 @@
 ﻿import { ImageResponse } from "next/og";
 import { CURRENT_VERSION } from "@/lib/siteData";
 
-export const runtime = "edge";
-
 export async function GET() {
   return new ImageResponse(
     (

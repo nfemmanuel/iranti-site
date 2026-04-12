@@ -49,7 +49,7 @@ const categoryColors: Record<string, string> = {
 
 export default function McpMemoryServerPost() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
 
       <main>

@@ -125,3 +125,25 @@ pre, code {
 .glow-amber {
   animation: amber-glow 2s ease-in-out infinite;
 }
+
+/* SVG path tracing — used on GridBackground */
+@keyframes trace-amber {
+  0%   { stroke-dashoffset: 1440; }
+  70%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes trace-teal {
+  0%   { stroke-dashoffset: 1200; }
+  70%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+.trace-amber {
+  stroke-dasharray: 1440;
+  stroke-dashoffset: 1440;
+  animation: trace-amber 20s ease-in infinite;
+}
+.trace-teal {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: trace-teal 24s ease-in 6s infinite backwards;
+}

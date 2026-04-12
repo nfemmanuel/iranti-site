@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function ResearchWorkflowsPost() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
 
       <main>

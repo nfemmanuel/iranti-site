@@ -515,7 +515,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function B1Page() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
       <main className="pt-24 pb-20">
 

@@ -556,7 +556,7 @@ export default function B3Page() {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
       <main className="pt-24 pb-16">
 

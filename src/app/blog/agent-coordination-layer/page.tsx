@@ -117,7 +117,7 @@ const faqJsonLd = {
 
 export default function AgentCoordinationLayerPost() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
 
       <Script id="ld-article" type="application/ld+json" strategy="afterInteractive"

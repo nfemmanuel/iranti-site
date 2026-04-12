@@ -60,7 +60,7 @@ const rows: Row[] = [
 
 export default function Mem0AlternativePost() {
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg-base)" }}>
+    <div className="min-h-screen">
       <Nav />
 
       <main>
