@@ -72,6 +72,12 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-2 shrink-0">
           <ThemeToggle />
           <Link
+            href="/feedback"
+            className="px-3.5 py-1.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-[13px] font-medium rounded-full transition-colors"
+          >
+            Give feedback
+          </Link>
+          <Link
             href="/docs"
             className="px-3.5 py-1.5 bg-[var(--text-primary)] hover:opacity-90 text-[var(--bg-base)] text-[13px] font-medium rounded-full transition-opacity"
           >
@@ -120,7 +126,14 @@ export default function Nav() {
               </Link>
             );
           })}
-          <div className="pt-4">
+          <div className="pt-4 flex flex-col gap-2">
+            <Link
+              href="/feedback"
+              className="flex items-center justify-center w-full px-4 py-2.5 border border-[var(--border-light)] text-[var(--text-secondary)] text-sm font-medium rounded-full transition-colors hover:border-[var(--text-faint)] hover:text-[var(--text-primary)]"
+              onClick={() => setOpen(false)}
+            >
+              Give feedback
+            </Link>
             <Link
               href="/docs"
               className="flex items-center justify-center w-full px-4 py-2.5 bg-[var(--text-primary)] text-[var(--bg-base)] text-sm font-medium rounded-full transition-opacity hover:opacity-90"
