@@ -75,7 +75,7 @@ export default function WelcomeToast() {
         <Link
           href="/feedback"
           onClick={dismiss}
-          className="flex-1 text-center px-3.5 py-2 bg-amber-500 hover:opacity-90 text-[#080808] text-[13px] font-medium rounded-full transition-opacity"
+          className="glow-amber flex-1 text-center px-3.5 py-2 bg-amber-500 hover:opacity-90 text-[#080808] text-[13px] font-medium rounded-full transition-opacity"
         >
           Share feedback
         </Link>
