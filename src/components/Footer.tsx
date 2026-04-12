@@ -13,6 +13,7 @@ export default function Footer() {
                 { label: "Evidence", href: "/benchmarks" },
                 { label: "Integrations", href: "/integrations" },
                 { label: "Install guide", href: "https://github.com/nfemmanuel/iranti#readme" },
+                { label: "Share feedback", href: "/feedback" },
               ],
             },
             {
