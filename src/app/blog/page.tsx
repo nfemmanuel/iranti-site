@@ -4,6 +4,14 @@ import Footer from "@/components/Footer";
 
 const POSTS = [
   {
+    slug: "agent-coordination-layer",
+    date: "2026-04-12",
+    title: "Five things Iranti solves that memory layers don't",
+    summary:
+      "Most AI memory tools store facts and retrieve them by similarity. That solves about 20% of the problem. The other 80% is coordination: agents sharing state across tools, work surviving crashes, conflicting beliefs getting resolved, teams knowing what their agents actually know.",
+    tags: ["multi-agent", "coordination", "use cases"],
+  },
+  {
     slug: "6k-downloads",
     date: "2026-04-09",
     title: "6,000 downloads in three weeks: what we learned building agent memory infrastructure",
