@@ -40,6 +40,16 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  await sql`
+    CREATE TABLE IF NOT EXISTS feedback (
+      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+      body text NOT NULL,
+      name text,
+      email text,
+      created_at timestamptz DEFAULT now()
+    )
+  `;
+
   const rows = await sql`
     INSERT INTO feedback (body, name, email)
     VALUES (${text.trim()}, ${cleanName}, ${cleanEmail})
