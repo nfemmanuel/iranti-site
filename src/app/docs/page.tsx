@@ -29,30 +29,32 @@ const guides = [
   {
     title: "Quickstart",
     desc: "Install the CLI, bring a database, start an instance, and bind a project.",
-    href: "https://github.com/nfemmanuel/iranti#readme",
+    href: "/docs/quickstart",
     time: "10 min",
-    external: true,
   },
   {
     title: "Claude Code guide",
-    desc: "Current MCP and hook setup for Claude Code, including workspace MCP and response-persistence hooks.",
-    href: "https://github.com/nfemmanuel/iranti#claude-code",
+    desc: "MCP and hook setup for Claude Code, including workspace MCP and response-persistence hooks.",
+    href: "/docs/claude-code",
     time: "5 min",
-    external: true,
   },
   {
     title: "Codex guide",
-    desc: "Current Codex setup path, including global configuration and VS Code MCP scaffolding.",
-    href: "https://github.com/nfemmanuel/iranti#codex",
+    desc: "Global Codex MCP registration, workspace files, and the memory protocol for Codex sessions.",
+    href: "/docs/codex",
     time: "5 min",
-    external: true,
   },
   {
-    title: "Manual / operator flow",
-    desc: "Use the CLI as an operator surface for status, doctor, repair, lifecycle, and project binding tasks.",
-    href: "https://github.com/nfemmanuel/iranti#readme",
+    title: "Control Plane",
+    desc: "Download the local web UI. Browse memory, watch agents connect in real time, and resolve conflicts.",
+    href: "/docs/control-plane",
+    time: "3 min",
+  },
+  {
+    title: "Operator reference",
+    desc: "Use the CLI for health checks, lifecycle, project binding, key management, and conflict resolution.",
+    href: "/docs/operator",
     time: "12 min",
-    external: true,
   },
 ];
 
@@ -114,10 +116,9 @@ export default function DocsPage() {
             </div>
             <div className="grid md:grid-cols-2 gap-5">
               {guides.map((guide) => (
-                <a
+                <Link
                   key={guide.title}
                   href={guide.href}
-                  {...(guide.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="group p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[var(--border-light)] rounded-xl transition-colors"
                 >
                   <div className="flex items-start justify-between mb-3">
@@ -126,7 +127,7 @@ export default function DocsPage() {
                   </div>
                   <h3 className="text-base font-semibold text-[var(--text-code)] group-hover:text-[var(--text-primary)] transition-colors mb-2">{guide.title}</h3>
                   <p className="text-sm text-[var(--text-muted)] leading-relaxed">{guide.desc}</p>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -182,7 +183,7 @@ export default function DocsPage() {
             </div>
             <div className="flex gap-3 flex-shrink-0">
               <Link href="/benchmarks" className="px-5 py-2.5 border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-[13px] rounded-full transition-colors">Read the evidence</Link>
-              <a href="https://github.com/nfemmanuel/iranti#readme" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-amber-500 hover:opacity-90 text-[#080808] text-[13px] font-medium rounded-full transition-opacity">Install guide →</a>
+              <Link href="/docs/quickstart" className="px-5 py-2.5 bg-amber-500 hover:opacity-90 text-[#080808] text-[13px] font-medium rounded-full transition-opacity">Install guide →</Link>
             </div>
           </div>
         </section>
