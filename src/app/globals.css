@@ -14,7 +14,7 @@
   --color-ink-400: #8a8a85;
   --color-ink-300: #b8b8b2;
   --color-ink-200: #d8d8d2;
-  --color-ink-100: #ebebе8;
+  --color-ink-100: #ebebe8;
   --color-ink-50: #f5f5f2;
 
   --color-sand-950: #1a1610;
@@ -101,6 +101,19 @@ pre, code {
   color: inherit;
 }
 
+/* Control plane screenshot theme switching */
+[data-theme="dark"]  .cp-img-light { display: none; }
+[data-theme="dark"]  .cp-img-dark  { display: block; }
+[data-theme="light"] .cp-img-dark  { display: none; }
+[data-theme="light"] .cp-img-light { display: block; }
+
+/* Backdrop-filter fallback for Firefox for Android < 103 */
+@supports not (backdrop-filter: blur(0)) {
+  .supports-no-backdrop-blur {
+    background-color: var(--bg-base) !important;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -126,23 +139,3 @@ pre, code {
   animation: amber-glow 2s ease-in-out infinite;
 }
 
-/* SVG path worm — used on GridBackground.
-   stroke-dasharray: segmentLen gap creates a short visible worm.
-   Animating dashoffset from 0 to -(segmentLen+gap) = one full pattern
-   repeat, so the loop is seamless — no stop, no flash reset. */
-@keyframes trace-amber {
-  from { stroke-dashoffset: 0; }
-  to   { stroke-dashoffset: -4224; }
-}
-@keyframes trace-teal {
-  from { stroke-dashoffset: 0; }
-  to   { stroke-dashoffset: -3408; }
-}
-.trace-amber {
-  stroke-dasharray: 320 3904;
-  animation: trace-amber 20s linear infinite;
-}
-.trace-teal {
-  stroke-dasharray: 260 3148;
-  animation: trace-teal 18s linear 5s infinite;
-}

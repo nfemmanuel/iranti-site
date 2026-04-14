@@ -4,6 +4,7 @@ import WhyNotVectorDB from "@/components/WhyNotVectorDB";
 import TheStaff from "@/components/TheStaff";
 import Proof from "@/components/Proof";
 import Integrations from "@/components/Integrations";
+import ControlPlane from "@/components/ControlPlane";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <WhyNotVectorDB />
       <Integrations />
       <TheStaff />
+      <ControlPlane />
       <Contact />
       <Footer />
     </main>

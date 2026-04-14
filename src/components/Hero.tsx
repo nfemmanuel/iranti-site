@@ -8,43 +8,11 @@ export default function Hero() {
   return (
     <section className="relative isolate min-h-screen flex flex-col items-center justify-center pt-16 px-6 overflow-hidden">
       <div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
             "linear-gradient(var(--text-primary) 1px, transparent 1px), linear-gradient(90deg, var(--text-primary) 1px, transparent 1px)",
           backgroundSize: "48px 48px",
-        }}
-        aria-hidden="true"
-      />
-
-      <div
-        className="absolute inset-x-[-10%] bottom-[-8%] h-[56vh] opacity-[0.18] md:opacity-[0.24]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--text-primary) 1px, transparent 1px), linear-gradient(90deg, var(--text-primary) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-          transform: "perspective(1200px) rotateX(79deg) scale(1.7)",
-          transformOrigin: "bottom center",
-          maskImage: "linear-gradient(to top, transparent 0%, black 18%, black 62%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to top, transparent 0%, black 18%, black 62%, transparent 100%)",
-        }}
-        aria-hidden="true"
-      />
-
-      <div
-        className="absolute inset-x-0 top-[18%] h-px opacity-40"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, var(--color-amber-500) 12%, transparent 50%, var(--color-teal-400) 88%, transparent 100%)",
-        }}
-        aria-hidden="true"
-      />
-
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[420px] rounded-full opacity-[0.08]"
-        style={{
-          background: "radial-gradient(ellipse, #f59e0b 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
