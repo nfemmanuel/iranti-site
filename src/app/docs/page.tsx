@@ -29,26 +29,30 @@ const guides = [
   {
     title: "Quickstart",
     desc: "Install the CLI, bring a database, start an instance, and bind a project.",
-    href: "/docs",
+    href: "https://github.com/nfemmanuel/iranti#readme",
     time: "10 min",
+    external: true,
   },
   {
     title: "Claude Code guide",
     desc: "Current MCP and hook setup for Claude Code, including workspace MCP and response-persistence hooks.",
-    href: "/docs",
+    href: "https://github.com/nfemmanuel/iranti#claude-code",
     time: "5 min",
+    external: true,
   },
   {
     title: "Codex guide",
     desc: "Current Codex setup path, including global configuration and VS Code MCP scaffolding.",
-    href: "/docs",
+    href: "https://github.com/nfemmanuel/iranti#codex",
     time: "5 min",
+    external: true,
   },
   {
     title: "Manual / operator flow",
     desc: "Use the CLI as an operator surface for status, doctor, repair, lifecycle, and project binding tasks.",
-    href: "/docs",
+    href: "https://github.com/nfemmanuel/iranti#readme",
     time: "12 min",
+    external: true,
   },
 ];
 
@@ -113,6 +117,7 @@ export default function DocsPage() {
                 <a
                   key={guide.title}
                   href={guide.href}
+                  {...(guide.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="group p-5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[var(--border-light)] rounded-xl transition-colors"
                 >
                   <div className="flex items-start justify-between mb-3">
