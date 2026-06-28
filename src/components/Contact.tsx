@@ -1,3 +1,8 @@
+"use client";
+
+import { Waitlist } from "@/components/Waitlist";
+import { trackOutbound } from "@/lib/track";
+
 export default function Contact() {
   return (
     <section className="py-24 px-6 border-t border-[var(--border-subtle)]">
@@ -22,15 +27,26 @@ export default function Contact() {
             your project root, and your agent has persistent shared memory.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10">
             <a
               href="https://github.com/nfemmanuel/iranti#readme"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                trackOutbound("outbound_github", "https://github.com/nfemmanuel/iranti#readme");
+              }}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:opacity-90 text-[#080808] text-[13px] font-medium rounded-full transition-opacity"
             >
               Install guide →
             </a>
+          </div>
+
+          <div className="max-w-xl">
+            <p className="text-sm text-[var(--text-muted)] mb-3">
+              Get setup tips and release notes — no spam, unsubscribe anytime.
+            </p>
+            <Waitlist />
           </div>
         </div>
       </div>

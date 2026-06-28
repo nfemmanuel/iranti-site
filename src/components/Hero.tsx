@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { CURRENT_VERSION } from "@/lib/siteData";
+import { CopyCommand } from "@/components/CopyCommand";
+import { track } from "@/lib/track";
 
 export default function Hero() {
 
@@ -42,23 +44,22 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
           <Link
             href="/docs"
+            onClick={() => track("cta_get_started")}
             className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-[#080808] text-[13px] font-medium rounded-full transition-opacity hover:opacity-90"
           >
             Get started →
           </Link>
           <Link
             href="/benchmarks"
+            onClick={() => track("cta_evidence")}
             className="px-5 py-2.5 bg-[var(--bg-surface)] border border-[var(--border-light)] hover:border-[var(--text-faint)] text-[var(--text-code)] text-[13px] rounded-full transition-colors"
           >
             See the evidence
           </Link>
         </div>
 
-        <div className="flex flex-col items-center gap-1.5 mb-12">
-          <div className="flex items-center gap-3 px-4 py-2.5 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-lg font-mono text-sm text-teal-400">
-            <span className="text-[var(--text-faint)] select-none">$</span>
-            <span>npm install -g iranti</span>
-          </div>
+        <div className="flex flex-col items-center gap-1.5 mb-12 w-full max-w-sm mx-auto">
+          <CopyCommand command="npm install -g iranti" label="npm-install" />
           <p className="text-xs text-[var(--text-faint)]">Requires Node.js + Postgres with pgvector</p>
         </div>
 

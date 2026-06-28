@@ -115,7 +115,7 @@ export default function RootLayout({
         <script
           defer
           data-domain="iranti.dev"
-          src="https://plausible.io/js/script.js"
+          src="https://plausible.io/js/script.tagged-events.js"
         />
       </head>
       <body className="antialiased">

@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { benchmarkHighlights } from "@/lib/siteData";
+import { useSectionView } from "@/components/useSectionView";
 
 const trustReasons = [
   "Shared facts survive process and session boundaries.",
@@ -9,8 +12,9 @@ const trustReasons = [
 ];
 
 export default function Proof() {
+  const ref = useSectionView("scrolled_evidence");
   return (
-    <section id="proof" className="py-24 px-6 border-t border-[var(--border-subtle)]">
+    <section ref={ref} id="proof" className="py-24 px-6 border-t border-[var(--border-subtle)]">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-6 h-px bg-teal-500" />
