@@ -35,18 +35,23 @@ export async function POST(req: NextRequest) {
 
     const audienceId = process.env.RESEND_AUDIENCE_ID;
     if (audienceId) {
-      await resend.contacts.create({ email: normalized, audienceId, unsubscribed: false });
+      const { error: contactErr } = await resend.contacts.create({ email: normalized, audienceId, unsubscribed: false });
+      if (contactErr) {
+        console.error("Resend contacts.create error:", contactErr);
+        return NextResponse.json({ error: "Could not save contact: " + contactErr.message }, { status: 502 });
+      }
     }
 
     const notifyTo = process.env.WAITLIST_NOTIFY_TO;
     const from = process.env.WAITLIST_FROM || "Iranti <onboarding@resend.dev>";
     if (notifyTo) {
-      await resend.emails.send({
+      const { error: emailErr } = await resend.emails.send({
         from,
         to: notifyTo,
         subject: `New Iranti signup: ${normalized}`,
         text: `${normalized} joined the list at ${new Date().toISOString()}.`,
       });
+      if (emailErr) console.error("Resend emails.send error:", emailErr);
     }
 
     return NextResponse.json({ ok: true });
